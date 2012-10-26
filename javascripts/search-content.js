@@ -8,14 +8,14 @@ function init() {
 }
 $("span.image-button").live('click', function () {
 		
-		$(".image-button").bind('mouseover',function() {
+		$(".jive-icon-med .image-button").bind('mouseover',function() {
 			$(this).css('background-position', ' -176px -1360px;');
 		});
 
-		$(".image-button").bind('click',function() {
+		$(" .jive-icon-med.image-button").bind('click',function() {
 			$(this).css('background-position', ' -176px -1360px;');
 		});
-		$(".image-button").bind('mouseout',function() {
+		$(" .jive-icon-med .image-button").bind('mouseout',function() {
 			$(this).css('background-position', ' -220px -1360px;');
 		});
 		var curRowId = $(this).attr("id");
