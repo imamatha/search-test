@@ -32,6 +32,9 @@ $("span.image-button").live('click', function () {
 
 	
     });
+ $(function() {
+        $( "#tabs" ).tabs();
+    });
 
  function monthConvert(d){
 
@@ -335,11 +338,16 @@ function search() {
         query : $("#query").val(),
         //sort : $("#sort-type").val(),
        // sortOrder : $("#sort-order").val()
-        
+     var html = "";
         
     };
 
-   
+    html +='<div id="tabs">'
+    html +='<ul>';
+    html +='<li><a href="#tabs-1">Discussion</a></li>';
+    html +='<li><a href="#tabs-2">Document</a></li>';
+    html +='<li><a href="#tabs-3">Blog</a></li>';
+    html +='</ul>';
     console.log("searching for " + JSON.stringify(params));
     osapi.jive.core.searches.searchContent(params).execute(function(response) {
        console.log("searching response is " + JSON.stringify(response));
@@ -348,7 +356,7 @@ function search() {
             alert(response.error.message);
         }
         else {
-            var html = "";
+           
 			var blog="";
 			var discussion="";
 			var update="";
@@ -432,7 +440,7 @@ function search() {
 								{
 								  discussionImage +='<span class="jive-icon-med jive-icon-discussion"></span>';
 								}
-			
+								discussion +='<div id="tabs-1">';
 								discussion +='<div id="div_'+discussionID+'" class="firstdiv">';                    		
 								discussion +='<ul>';			
 								discussion +=discussionImage+'<li><a href="'+url+'" target="_apps">'+subject+'</a></li>';			
@@ -455,13 +463,14 @@ function search() {
 								discussion +='</ul>';
 								discussion +='</div>';				                
 								discussion +='</div>';
-								discussion +='<br>';                
+								discussion +='</div>';                
                         }
                
                
 						if(row.type=="document"){
 						
 							var docID = (url.substring(url.lastIndexOf("-"))).substr(1);
+							document +='<div id="tabs-2">';
                     		document +='<div id="div_'+docID+'" class="firstdiv"> ';
 							document +='<ul>';
                     		document +='<span class="jive-icon-med jive-icon-document"></span><li> <a href="'+url+'" target="_apps">'+subject+'</a></li>';
@@ -485,7 +494,7 @@ function search() {
 							document +='</div>';
                                        
                     		document +='</div>';
-                    		document +='<br>';
+                    		document +='</div>'';
                       
                         }
                
@@ -495,6 +504,7 @@ function search() {
 							var blogSummaryId=row.blogSummary.resources.self.ref;
 							var blogId = (blogSummaryId.substring(blogSummaryId.lastIndexOf("/"))).substr(1);
 							var postId = (postDetailsId.substring(postDetailsId.lastIndexOf("/"))).substr(1);
+							post +='<div id="tabs-3">';
 							post +='<div id="div_'+postId+'" class="firstdiv"> ';
 							post +='<ul>';
 							post +='<span class="jive-icon-med jive-icon-blog"></span><li class="post" ><a href="'+url+'" target="_apps">'+subject+'</a></li>';
@@ -518,15 +528,15 @@ function search() {
 							post +='</div>'; 
                                     
 							post +='</div>';          
-							post +='<br>';              
+							post +='</div>';              
 					}
                                   
             });
-                       
+                   
             html +=discussion;
 			html +=document;
 			html +=post;
-				
+			html +='</div>' ; 	
             console.log(html);
             $("#search-results").html(html);
             $("#search-info").show();
