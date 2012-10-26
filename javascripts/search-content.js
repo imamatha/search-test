@@ -495,7 +495,7 @@ function search() {
 							document +='</div>';
                                        
                     		document +='</div>';
-                    		document +='</div>'';
+                    		document +='</div>';
                       
                         }
                
