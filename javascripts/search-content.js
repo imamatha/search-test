@@ -441,7 +441,7 @@ function search() {
 								{
 								  discussionImage +='<span class="jive-icon-med jive-icon-discussion"></span>';
 								}
-								discussion +='<div id="tabs-1">';
+								
 								discussion +='<div id="div_'+discussionID+'" class="firstdiv">';                    		
 								discussion +='<ul>';			
 								discussion +=discussionImage+'<li><a href="'+url+'" target="_apps">'+subject+'</a></li>';			
@@ -464,14 +464,14 @@ function search() {
 								discussion +='</ul>';
 								discussion +='</div>';				                
 								discussion +='</div>';
-								discussion +='</div>';                
+								discussion +='<br>';                
                         }
                
                
 						if(row.type=="document"){
 						
 							var docID = (url.substring(url.lastIndexOf("-"))).substr(1);
-							document +='<div id="tabs-2">';
+							
                     		document +='<div id="div_'+docID+'" class="firstdiv"> ';
 							document +='<ul>';
                     		document +='<span class="jive-icon-med jive-icon-document"></span><li> <a href="'+url+'" target="_apps">'+subject+'</a></li>';
@@ -495,17 +495,17 @@ function search() {
 							document +='</div>';
                                        
                     		document +='</div>';
-                    		document +='</div>';
+                    		document +='<br>';
                       
                         }
-               
+						
 					if(row.type=="post"){
 					
 							var postDetailsId=row.resources.self.ref;
 							var blogSummaryId=row.blogSummary.resources.self.ref;
 							var blogId = (blogSummaryId.substring(blogSummaryId.lastIndexOf("/"))).substr(1);
 							var postId = (postDetailsId.substring(postDetailsId.lastIndexOf("/"))).substr(1);
-							post +='<div id="tabs-3">';
+							
 							post +='<div id="div_'+postId+'" class="firstdiv"> ';
 							post +='<ul>';
 							post +='<span class="jive-icon-med jive-icon-blog"></span><li class="post" ><a href="'+url+'" target="_apps">'+subject+'</a></li>';
@@ -528,15 +528,16 @@ function search() {
 							post +='</ul>';
 							post +='</div>'; 
                                     
-							post +='</div>';          
-							post +='</div>';              
+							post +='</div>';  
+							post +='<br>';							
+							             
 					}
                                   
             });
                    
-            html +=discussion;
-			html +=document;
-			html +=post;
+            html +='<div id="tabs-1">'+discussion+'</div>';;
+			html +='<div id="tabs-2">'+document+'</div>';
+			html +='<div id="tabs-3">'+post+'</div>';
 			html +='</div>' ; 	
             console.log(html);
             $("#search-results").html(html);
