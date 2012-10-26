@@ -530,22 +530,12 @@ function search() {
                                   
             });
            
-			html +='<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />';
-			html +='<script src="http://code.jquery.com/jquery-1.8.2.js"></script>';
-			html +='<script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>';
-            html +='<div id="tabs">';
-				html +='<ul>';
-					html +='<li><a href="#tabs-1">Discussion</a></li>';
-					html +='<li><a href="#tabs-2">Document</a></li>';
-					html +='<li><a href="#tabs-3">Blog</a></li>';
-				html +='</ul>';
-				html +='<div id="tabs-1">'+discussion+'</div>';;
-				html +='<div id="tabs-2">'+document+'</div>';
-				html +='<div id="tabs-3">'+post+'</div>';
-			html +='</div>';
+			
 				
             console.log(html);
-            $("#search-results").html(html);
+            $("#tabs-1").html(discussion);
+			$("#tabs-2").html(document);
+			$("#tabs-3").html(post);
             $("#search-info").show();
             gadgets.window.adjustHeight();
         }
