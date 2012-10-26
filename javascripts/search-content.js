@@ -333,12 +333,13 @@ function search() {
 	$(".content").html("");
 	$(".content").hide();
     gadgets.window.adjustHeight();
+	var html = "";
     var params = {
         //limit : $("#limit").val(),
         query : $("#query").val(),
         //sort : $("#sort-type").val(),
        // sortOrder : $("#sort-order").val()
-     var html = "";
+     
         
     };
 
