@@ -171,7 +171,7 @@ padding-bottom: 1px;
 }
 
 .withborder {
-       border: 1px solid black;
+        /*border: 1px solid black;*/
        /* position:absolute;*/
        top:5px;
        left:1px;
