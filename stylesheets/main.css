@@ -69,7 +69,27 @@ text-decoration:underline;
      float: right;
     /*width: 20px !important; */
 }
-
+.image-button:hover{
+    background-position: -176px -1360px;
+    /*background-position: -220px -1360px;*/
+    
+     float: right;
+    /*width: 20px !important; */
+}
+.image-button::selection{
+    background-position: -176px -1360px;
+    /*background-position: -220px -1360px;*/
+    
+     float: right;
+    /*width: 20px !important; */
+}
+.image-button::-moz-selection{
+    background-position: -176px -1360px;
+    /*background-position: -220px -1360px;*/
+    
+     float: right;
+    /*width: 20px !important; */
+}
 
 /*
 .image-button{
