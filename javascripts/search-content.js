@@ -343,12 +343,7 @@ function search() {
         
     };
 
-    html +='<div id="tabs">'
-    html +='<ul>';
-    html +='<li><a href="#tabs-1">Discussion</a></li>';
-    html +='<li><a href="#tabs-2">Document</a></li>';
-    html +='<li><a href="#tabs-3">Blog</a></li>';
-    html +='</ul>';
+   
     console.log("searching for " + JSON.stringify(params));
     osapi.jive.core.searches.searchContent(params).execute(function(response) {
        console.log("searching response is " + JSON.stringify(response));
@@ -538,7 +533,7 @@ function search() {
             html +='<div id="tabs-1">'+discussion+'</div>';;
 			html +='<div id="tabs-2">'+document+'</div>';
 			html +='<div id="tabs-3">'+post+'</div>';
-			html +='</div>' ; 	
+				
             console.log(html);
             $("#search-results").html(html);
             $("#search-info").show();
