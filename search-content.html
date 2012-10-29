@@ -4,8 +4,6 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
 <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
-
-<script type="text/javascript" src="javascripts/imtech_pager.js"></script>
 <h3 align="center">Search </h3>
 <table align="center">
  <tr>
@@ -18,15 +16,7 @@
  </tr>
 </table>
 <br>
-<script type="text/javascript">
-	var pager = new Imtech.Pager();
-	$(document).ready(function() {
-	    pager.paragraphsPerPage = 5; // set amount elements per page
-	    pager.pagingContainer = $('#tabs-1'); // set of main container
-	    pager.paragraphs = $('.firstdiv', pager.pagingContainer); // set of required containers
-	    pager.showPage(1);
-	});
-</script>
+
 <div id="search-info" style="display: none">
 	<div class="withborder">
 	<h4>Search Results</h4>  
@@ -41,7 +31,7 @@
 				<div id="tabs-2" class="search-results"></div>
 				<div id="tabs-3" class="search-results"></div>
 			</div>
-			<div id="pagingControls"></div>
+			
 		
 		<div class='content' ></div>
 	 </div>
