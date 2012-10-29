@@ -532,7 +532,7 @@ function search() {
            
 			
 				
-            console.log(html);
+            //console.log(html);
             $("#tabs-1").html(discussion);
 			$("#tabs-2").html(document);
 			$("#tabs-3").html(post);
