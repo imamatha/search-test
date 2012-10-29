@@ -4,6 +4,123 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
 <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+<style type="text/css" media="screen">
+
+#slider {
+	width: 300px;
+	height: 200px;
+	overflow: hidden;
+	background: gray;
+}
+
+#slider div {
+	float: left;
+	width: 300px;
+	height: 200px;
+	background: silver;
+	line-height: 200px;
+	text-align: center;
+	font-size: 4em;
+}
+
+#pagination {
+	width: 300px;
+	margin-bottom: 0.5em;
+	text-align: center;
+}
+
+#pagination a {
+	margin-right: 0.3em;
+}
+
+</style>
+<script type="text/javascript">
+
+<!--
+
+$(document).ready(function() {
+
+    var idCounter = 0;
+    var idName = 'slide-';
+    var idRefs = [];
+    
+    var linkCounter = 0;
+    
+    $('#tabs-1 div').each(function() {
+    
+        idCounter++;
+	
+	$(this).attr('id', idName + idCounter);
+	
+	idRefs.push($(this).attr('id'));
+	
+	$(this).hide();
+    
+    });
+    
+    
+    for(var i=0; i<idRefs.length; i++)     {
+    
+        linkCounter++;
+        var id = idRefs[i];
+	$('<a></a>').attr('href', '#' + id).text(linkCounter.toString()).appendTo('#pagination');
+	
+    
+    
+    }
+    
+    $('#pagination a').each(function() {
+    
+        var $a = $(this);
+	
+	$a.click(function(e) {
+	
+	    var href = $a.attr('href');
+	    var $id = href.replace('#', '');
+	    
+	    for(var j=0; j<idRefs.length; j++) {
+	    
+	        var idRef = idRefs[j];
+		
+		if($id == idRef) {
+		
+		    if($(href).is(':hidden')) {
+		    
+		        $(href).show(300);
+		    
+		    }
+		
+		} else if($id != idRef) {
+		
+		    var ref = '#' + idRef;
+		    
+		    if($(ref).is(':visible')) {
+		    
+		        $(ref).hide();
+		    
+		    }
+		
+		
+		}
+	    
+	    
+	    }
+	    
+	    e.preventDefault();
+	    
+	    
+	
+	});
+    
+    
+    });
+
+});
+-->
+
+
+</script>
+
 <h3 align="center">Search </h3>
 <table align="center">
  <tr>
@@ -27,6 +144,7 @@
 					<li><a href="#tabs-2">Document</a></li>
 					<li><a href="#tabs-3">Blog</a></li>
 				</ul>
+				<div id="pagination"></div>
 				<div id="tabs-1" class="search-results"></div>
 				<div id="tabs-2" class="search-results"></div>
 				<div id="tabs-3" class="search-results"></div>
