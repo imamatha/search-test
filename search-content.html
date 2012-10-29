@@ -21,7 +21,7 @@
 <br>
 <script type="text/javascript">
 
-var gallery=new virtualpaginate({
+var gallery=new paginate({
 	piececlass: "firstdiv", //class of container for each piece of content
 	piececontainer: 'div', //container element type (ie: "div", "p" etc)
 	pieces_per_page: 1, //Pieces of content to show per page (1=1 piece, 2=2 pieces etc)
@@ -37,13 +37,14 @@ gallery.buildpagination(["paginate", "jspaginate"])
 	<div class="withborder">
 	<h4>Search Results</h4>  
 	<hr size="1" color="lightgrey"> 
-			<div id="jspaginate" class="paginationstyle"></div>
+			
 			<div id="tabs">
 				<ul>
 					<li><a href="#tabs-1">Discussion</a></li>
 					<li><a href="#tabs-2">Document</a></li>
 					<li><a href="#tabs-3">Blog</a></li>
 				</ul>
+				<div id="jspaginate" class="paginationstyle"></div>
 				<div id="tabs-1" class="search-results"></div>
 				<div id="tabs-2" class="search-results"></div>
 				<div id="tabs-3" class="search-results"></div>
