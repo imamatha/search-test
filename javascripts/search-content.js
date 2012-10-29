@@ -4,6 +4,13 @@ function init() {
     $("#search").click(search);
 	//$(".image-button").click(expand);
     gadgets.window.adjustHeight();
+	var pager = new Imtech.Pager();
+	$(document).ready(function() {
+	    pager.paragraphsPerPage = 5; // set amount elements per page
+	    pager.pagingContainer = $('#tabs-1'); // set of main container
+	    pager.paragraphs = $('.firstdiv', pager.pagingContainer); // set of required containers
+	    pager.showPage(1);
+	});
    
 }
 $("span.image-button").live('click', function () {
