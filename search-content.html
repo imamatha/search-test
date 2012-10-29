@@ -4,9 +4,6 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
 <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
-
-<script type="text/javascript" src="javascripts/paginate.js"></script>
-<link rel="stylesheet" href="stylesheets/paginate.css" type="text/css" media="screen" />
 <h3 align="center">Search </h3>
 <table align="center">
  <tr>
@@ -19,39 +16,22 @@
  </tr>
 </table>
 <br>
-<script type="text/javascript">
-	var gallery=new virtualpaginate({
-	piececlass: "#tabs-1", //class of container for each piece of content
-	piececontainer: 'div', //container element type (ie: "div", "p" etc)
-	pieces_per_page: 1, //Pieces of content to show per page (1=1 piece, 2=2 pieces etc)
-	defaultpage: 0, //Default page selected (0=1st page, 1=2nd page etc). Persistence if enabled overrides this setting.
-	wraparound: false,
-	persist: false //Remember last viewed page and recall it when user returns within a browser session?
-})
 
-gallery.buildpagination(["paginate", "jspaginate"])
-
-
-</script>
 <div id="search-info" style="display: none">
 	<div class="withborder">
 	<h4>Search Results</h4>  
 	<hr size="1" color="lightgrey"> 
-			<div id="jspaginate" class="paginationstyle"></div>
 			<div id="tabs">
 				<ul>
 					<li><a href="#tabs-1">Discussion</a></li>
 					<li><a href="#tabs-2">Document</a></li>
 					<li><a href="#tabs-3">Blog</a></li>
 				</ul>
-				
 				<div id="tabs-1" class="search-results"></div>
 				<div id="tabs-2" class="search-results"></div>
 				<div id="tabs-3" class="search-results"></div>
 			</div>
-	<div id="paginate" class="paginationstyle">
-		<a href="#" rel="previous">Prev</a> <span class="flatview"></span> <a href="#" rel="next">Next</a>
-	</div>		
+			
 		
 		<div class='content' ></div>
 	 </div>

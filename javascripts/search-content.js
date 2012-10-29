@@ -4,7 +4,6 @@ function init() {
     $("#search").click(search);
 	//$(".image-button").click(expand);
     gadgets.window.adjustHeight();
-	
    
 }
 $("span.image-button").live('click', function () {

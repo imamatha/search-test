@@ -61,24 +61,6 @@ text-decoration:underline;
     background-position: -208px -16px;
 }
 
-body{
-background:#eee;
-font-family:Verdana, Helvetica, Arial, sans-serif;
-margin:0;
-padding:0
-}
-.example{
-	background:#FFF;
-	width:1000px;
-	font-size:80%;
-	border:1px #000 solid;
-	margin:0.5em 10% 0.5em;
-	padding:1em 2em 2em;
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px
-}
-
-
 
 .image-button{
     /*background-position: -176px -1360px; */
