@@ -353,6 +353,7 @@ function search() {
         }
         else {
            
+			var all="";
 			var blog="";
 			var discussion="";
 			var update="";
@@ -533,9 +534,13 @@ function search() {
 			
 				
             //console.log(html);
-            $("#tabs-1").html(discussion);
-			$("#tabs-2").html(document);
-			$("#tabs-3").html(post);
+			all +=discussion;
+			all +="<br>"+document;
+			all +="<br>"+post;
+			$("#tabs-1").html(all);
+            $("#tabs-2").html(discussion);
+			$("#tabs-3").html(document);
+			$("#tabs-4").html(post);
             $("#search-info").show();
             gadgets.window.adjustHeight();
         }
