@@ -418,6 +418,16 @@ function search() {
 
                         if(row.type=="discussion"){
 						
+								var i=0;
+								 var display="";
+								if(i==0)
+								{
+									display="";
+								}
+								else{
+								display="display:none;";
+								}
+						
 								var discussionID = (url.substring(url.lastIndexOf("/"))).substr(1);
 								var discussionImage="";
 								if(isQuestion)
@@ -437,7 +447,7 @@ function search() {
 								  discussionImage +='<span class="jive-icon-med jive-icon-discussion"></span>';
 								}
 								
-								discussion +='<div id="div_'+discussionID+'" class="firstdiv">';                    		
+								discussion +='<div id="div_'+discussionID+'" class="firstdiv" style="'+display+'">';                    		
 								discussion +='<ul>';			
 								discussion +=discussionImage+'<li><a href="'+url+'" target="_apps">'+subject+'</a></li>';			
 								discussion +='</ul>'; 
@@ -459,7 +469,9 @@ function search() {
 								discussion +='</ul>';
 								discussion +='</div>';				                
 								discussion +='</div>';
-								discussion +='<br>';                
+								discussion +='<br>'; 
+								i++;
+								
                         }
                
                
