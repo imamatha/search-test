@@ -447,7 +447,7 @@ function search() {
 								  discussionImage +='<span class="jive-icon-med jive-icon-discussion"></span>';
 								}
 								
-								discussion +='<div id="div_'+discussionID+'" class="firstdiv pagedemo" style="'+display+'">';                    		
+								discussion +='<div id="div_'+discussionID+'" class="firstdiv" style="'+display+'">';                    		
 								discussion +='<ul>';			
 								discussion +=discussionImage+'<li><a href="'+url+'" target="_apps">'+subject+'</a></li>';			
 								discussion +='</ul>'; 
