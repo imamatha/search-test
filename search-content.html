@@ -52,7 +52,7 @@
             // Load HTML snippet with AJAX and insert it into the Hiddenresult element
             // When the HTML has loaded, call initPagination to paginate the elements        
             $(document).ready(function(){      
-                $('#tabs-1').load( search(), null, initPagination);
+                $('#tabs-1').load( $("#tabs-1").html(discussion), null, initPagination);
             });
             
             
