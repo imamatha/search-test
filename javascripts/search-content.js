@@ -378,7 +378,7 @@ function search() {
 			var items_per_page =5;
 			var newcontent = '';
 			var page_index=0;
-			
+			var page="";
             $.each(rows, function(index, row) {
             	url=row.resources.html.ref;
 				subject=row.subject;
@@ -470,7 +470,7 @@ function search() {
 								console.log("i value "+i);
 								if((i>=items_per_page)&& (i%items_per_page==0))
 								{
-									var page_(i/items_per_page)=discussion;
+									var page="page_"+_(i/items_per_page);
 									console.log("i value inside if "+i);
 									console.log("page_"+(i/items_per_page ));
 								}
