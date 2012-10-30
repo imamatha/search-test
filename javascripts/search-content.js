@@ -374,7 +374,7 @@ function search() {
             var myDate="";
 			var isAnswered = 0;
 			var isQuestion = 0
-         
+			var i=0;
             $.each(rows, function(index, row) {
             	url=row.resources.html.ref;
 				subject=row.subject;
@@ -415,7 +415,7 @@ function search() {
                 dateM=myDate[1];
 				var finalMonth=monthConvert(dateM);
 				var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 
-					var i=0;
+					
                         if(row.type=="discussion"){
 						
 								i=i+1;
