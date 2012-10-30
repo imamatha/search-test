@@ -375,6 +375,10 @@ function search() {
 			var isAnswered = 0;
 			var isQuestion = 0
 			var i=0;
+			var items_per_page =5;
+			var newcontent = '';
+			var page_index=0;
+			
             $.each(rows, function(index, row) {
             	url=row.resources.html.ref;
 				subject=row.subject;
@@ -418,8 +422,7 @@ function search() {
 					
                         if(row.type=="discussion"){
 						
-								i=i+1;
-								console.log("i value "+i);
+								
 								var discussionID = (url.substring(url.lastIndexOf("/"))).substr(1);
 								var discussionImage="";
 								if(isQuestion)
@@ -461,8 +464,14 @@ function search() {
 								discussion +='</ul>';
 								discussion +='</div>';				                
 								discussion +='</div>';
-								discussion +='<br>';      
+								discussion +='<br>';   
 								
+								i=i+1;
+								console.log("i value "+i);
+								if((i>=tems_per_page==0 )&& (i%items_per_page==0))
+								{
+								console.log("i valueinside if "+i);
+								}
                         }
                
                
