@@ -470,7 +470,7 @@ function search() {
 								console.log("i value "+i);
 								if((i>=items_per_page)&& (i%items_per_page==0))
 								{
-									var page="page_"+_(i/items_per_page);
+									var page="page_"+(i/items_per_page);
 									console.log("i value inside if "+i);
 									console.log(page);
 								}
