@@ -472,7 +472,7 @@ function search() {
 								{
 									var page="page_"+_(i/items_per_page);
 									console.log("i value inside if "+i);
-									console.log("page_"+(i/items_per_page ));
+									console.log(page);
 								}
                         }
                
