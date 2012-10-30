@@ -418,9 +418,8 @@ function search() {
 					var i=0;
                         if(row.type=="discussion"){
 						
-							
-								  
-						
+								i=i+1;
+								console.log("i value "+i);
 								var discussionID = (url.substring(url.lastIndexOf("/"))).substr(1);
 								var discussionImage="";
 								if(isQuestion)
@@ -463,8 +462,7 @@ function search() {
 								discussion +='</div>';				                
 								discussion +='</div>';
 								discussion +='<br>';      
-								i=i+1;								;
-								console.log("i value "+i);
+								
                         }
                
                
