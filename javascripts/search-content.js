@@ -470,11 +470,10 @@ function search() {
 								console.log("i value "+i);
 								if((i>=items_per_page)&& (i%items_per_page==0))
 								{
-									var pageval=i/items_per_page;
-									var page="page_";
+									var page="page_"+(i/items_per_page);
 									console.log("i value inside if "+i);
 									console.log(page);
-									page+pageval=discussion;
+									page=discussion;
 									console.log(page);
 									
 								}
