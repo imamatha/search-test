@@ -60,13 +60,7 @@ text-decoration:underline;
 .jive-icon-discussion-correct {
     background-position: -208px -16px;
 }
-body{
-                background: #a7c7dc url(bg.png) repeat-x top left;
-                font-family: verdana;
-                padding:0px;
-                margin:0px;
-                letter-spacing:2px;
-            }
+
 
 .image-button{
     /*background-position: -176px -1360px; */
