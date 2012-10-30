@@ -468,7 +468,7 @@ function search() {
 								
 								i=i+1;
 								console.log("i value "+i);
-								if((i>=tems_per_page==0 )&& (i%items_per_page==0))
+								if((i>=items_per_page==0 )&& (i%items_per_page==0))
 								{
 								console.log("i valueinside if "+i);
 								}
