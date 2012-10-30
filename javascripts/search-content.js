@@ -419,6 +419,85 @@ function search() {
 
                         if(row.type=="discussion"){
 						
+							$(document).ready(function() {
+
+									var idCounter = 0;
+									var idName = 'slide-';
+									var idRefs = [];
+									
+									var linkCounter = 0;
+									
+									$('#tabs-2 div').each(function() {
+									
+										idCounter++;
+									
+									$(this).attr('id', idName + idCounter);
+									
+									idRefs.push($(this).attr('id'));
+									
+									$(this).hide();
+									
+									});
+									
+									
+									for(var i=0; i<idRefs.length; i++)     {
+									
+										linkCounter++;
+										var id = idRefs[i];
+									$('<a></a>').attr('href', '#' + id).text(linkCounter.toString()).appendTo('#pagination');
+									
+									
+									
+									}
+									
+									$('#pagination a').each(function() {
+									
+										var $a = $(this);
+									
+									$a.click(function(e) {
+									
+										var href = $a.attr('href');
+										var $id = href.replace('#', '');
+										
+										for(var j=0; j<idRefs.length; j++) {
+										
+											var idRef = idRefs[j];
+										
+										if($id == idRef) {
+										
+											if($(href).is(':hidden')) {
+											
+												$(href).show(300);
+											
+											}
+										
+										} else if($id != idRef) {
+										
+											var ref = '#' + idRef;
+											
+											if($(ref).is(':visible')) {
+											
+												$(ref).hide();
+											
+											}
+										
+										
+										}
+										
+										
+										}
+										
+										e.preventDefault();
+										
+										
+									
+									});
+									
+									
+									});
+
+								});
+						
 								var discussionID = (url.substring(url.lastIndexOf("/"))).substr(1);
 								var discussionImage="";
 								if(isQuestion)
