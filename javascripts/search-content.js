@@ -414,11 +414,11 @@ function search() {
                 dateM=myDate[1];
 				var finalMonth=monthConvert(dateM);
 				var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 
-
+				var i=0;
 
                         if(row.type=="discussion"){
 						
-								var i=0;
+								
 								 var display="";
 								if(i==0)
 								{
