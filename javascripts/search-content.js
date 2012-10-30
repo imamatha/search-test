@@ -463,7 +463,7 @@ function search() {
 								discussion +='</div>';				                
 								discussion +='</div>';
 								discussion +='<br>';      
-								i++								;
+								i=i+1;								;
 								console.log("i value "+i);
                         }
                
