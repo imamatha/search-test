@@ -613,13 +613,6 @@ function search() {
 			all +=discussion;
 			all +="<br>"+document;
 			all +="<br>"+post;
-			
-			discussion +='<div id="pagingControls"></div></p>';
-			$("#tabs-1").html(all);
-            $("#tabs-2").html(discussion);
-			$("#tabs-3").html(document);
-			$("#tabs-4").html(post);
-            $("#search-info").show();
 			var pager = new Imtech.Pager();
 			$(document).ready(function() {
 				pager.paragraphsPerPage = 3; // set amount elements per page
@@ -627,6 +620,13 @@ function search() {
 				pager.paragraphs = $('div.firstdiv', pager.pagingContainer); // set of required containers
 				pager.showPage(1);
 			});
+			discussion +='<div id="pagingControls"></div></p>';
+			$("#tabs-1").html(all);
+            $("#tabs-2").html(discussion);
+			$("#tabs-3").html(document);
+			$("#tabs-4").html(post);
+            $("#search-info").show();
+			
             gadgets.window.adjustHeight();
         }
     });
