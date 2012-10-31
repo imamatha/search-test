@@ -616,7 +616,7 @@ function search() {
 			all +="<br>"+document;
 			all +="<br>"+post;
 			
-			discussion +='<div id="pagingControls">faxsaccsandvasdnvfnvnmxdbvmbvxcvbxnbvxcnbv</div>';
+			discussion +='<div id="pagingControls"></div>';
 			console.log("discussion::"+discussion);
 			$("#tabs-1").html(all);
             $("#tabs-2").html(discussion);
