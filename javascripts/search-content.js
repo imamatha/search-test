@@ -375,6 +375,7 @@ function search() {
 			var isAnswered = 0;
 			var isQuestion = 0
 			var i=1;
+			var loopcheck=0;
 			var items_per_page =6;
 			var newcontent = '';
 			var page_index=0;
@@ -445,7 +446,7 @@ function search() {
 								
 								console.log("i value "+i);
 								
-								if((i>=items_per_page)&& (i%items_per_page==0))
+								if((loopcheck>=items_per_page)&& (loopcheck%items_per_page==0))
 								{
 									
 									i=i++;
@@ -480,7 +481,7 @@ function search() {
 								page +='</div>';				                
 								page +='</div>';
 								page +='<br>';   
-								
+								loopcheck=loopcheck+1
 								
                         }
                
