@@ -381,6 +381,7 @@ function search() {
 			var page_index=0;
 			var page="";
 			var display="display:block";
+			var paginate="";
             $.each(rows, function(index, row) {
             	url=row.resources.html.ref;
 				subject=row.subject;
@@ -451,7 +452,8 @@ function search() {
 								{
 									console.log("Inside If value ");
 									i=i+1;
-									display="display:none";									
+									display="display:none";
+									paginate +='<li>'+i+'</li>';	
 								}
 								else
 								{
@@ -459,6 +461,7 @@ function search() {
 								}
 								var page="page_"+i;
 								console.log(page);
+								console.log(paginate);
 								discussion +='<div id="div_'+page+'" style="'+display+'">';
 								discussion +='<div id="div_'+discussionID+'" class="firstdiv" style="">';                    		
 								discussion +='<ul>';			
@@ -563,6 +566,7 @@ function search() {
 			all +=discussion;
 			all +="<br>"+document;
 			all +="<br>"+post;
+			//discussion +=<div>
 			$("#tabs-1").html(all);
             $("#tabs-2").html(discussion);
 			$("#tabs-3").html(document);
