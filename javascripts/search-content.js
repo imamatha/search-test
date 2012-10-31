@@ -617,13 +617,15 @@ function search() {
 			
 			console.log("discussion:::"+discussion);
 			$("#tabs-1").html(all);
-            $("#tabs-2").html(discussion);
+            
 			var pager = new Imtech.Pager();
 			$(document).ready(function() {
+				discussion +='<div id="pagingControls"></div></p>';
 				pager.paragraphsPerPage = 3; // set amount elements per page
+				$("#tabs-2").html(discussion);
 				pager.pagingContainer = $('#tabs-2'); // set of main container
 				pager.paragraphs = $('div.firstdiv', pager.pagingContainer); // set of required containers
-				discussion +='<div id="pagingControls"></div></p>';
+				
 				pager.showPage(1);
 			});
 			$("#tabs-3").html(document);
