@@ -621,7 +621,7 @@ function search() {
             $("#search-info").show();
 			var pager = new Imtech.Pager();
 			$(document).ready(function() {
-				pager.paragraphsPerPage = 5; // set amount elements per page
+				pager.paragraphsPerPage = 3; // set amount elements per page
 				pager.pagingContainer = $('#tabs-2'); // set of main container
 				pager.paragraphs = $('div.firstdiv', pager.pagingContainer); // set of required containers
 				pager.showPage(1);
