@@ -374,7 +374,7 @@ function search() {
             var myDate="";
 			var isAnswered = 0;
 			var isQuestion = 0
-			var i=0;
+			var i=1;
 			var items_per_page =6;
 			var newcontent = '';
 			var page_index=0;
@@ -444,16 +444,18 @@ function search() {
 								}
 								i=i+1;
 								console.log("i value "+i);
-								var page="page_"+((i%items_per_page)+1);
-								/*if((i>=items_per_page)&& (i%items_per_page==0))
+								
+								if((i>=items_per_page)&& (i%items_per_page==0))
 								{
 									
-									console.log("i value inside if "+i);
-									console.log(page);
-									//page=discussion;
-									console.log(page);
+									i=i++;
 																		
-								}*/
+								}
+								else
+								{
+									i=i;
+								}
+								var page="page_"+i;
 								console.log(page);
 								page +='<div id="div_'+discussionID+'" class="firstdiv" style="">';                    		
 								page +='<ul>';			
