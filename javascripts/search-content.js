@@ -376,7 +376,7 @@ function search() {
 			var isQuestion = 0
 			var i=1;
 			var loopcheck=0;
-			var items_per_page =6;
+			var items_per_page =5;
 			var newcontent = '';
 			var page_index=0;
 			var page="";
