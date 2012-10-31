@@ -534,7 +534,7 @@ function search() {
 								discussion +='</ul>';
 								discussion +='</div>';				                
 								discussion +='</div>';
-								discussion +='<br>'; 
+								//discussion +='<br>'; 
 								//discussion +='</div>';
 								loopcheck=loopcheck+1
 								
