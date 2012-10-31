@@ -626,7 +626,6 @@ function search() {
 				pager.paragraphsPerPage = 3; // set amount elements per page
 				pager.pagingContainer = $('#tabs-2'); // set of main container
 				pager.paragraphs = $('div.firstdiv', pager.pagingContainer); // set of required containers
-				console.log("discussion:::"+discussion);
 				pager.showPage(1);
 				
 			});
