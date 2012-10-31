@@ -530,7 +530,7 @@ function search() {
 								discussion +='<div class="align">'+contentSummary+'</div>';                  
 								discussion +='</ul>';
 								discussion +='</div>';				                
-								discussion +='</div><p>';
+								discussion +='</div>';
 								discussion +='<br>'; 
 								//discussion +='</div>';
 								loopcheck=loopcheck+1
@@ -613,7 +613,7 @@ function search() {
 			all +="<br>"+document;
 			all +="<br>"+post;
 			
-			discussion +='<div id="pagingControls"></div>';
+			discussion +='<div id="pagingControls"></div></p>';
 			$("#tabs-1").html(all);
             $("#tabs-2").html(discussion);
 			$("#tabs-3").html(document);
