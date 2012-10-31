@@ -449,7 +449,7 @@ function search() {
 								if((loopcheck>=items_per_page)&& (loopcheck%items_per_page==0))
 								{
 									
-									i=i++;
+									i=i+1;
 																		
 								}
 								else
