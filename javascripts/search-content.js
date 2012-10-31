@@ -326,6 +326,52 @@ function expandBlog(blogId, blogpostId){
 	});
 
 }
+Var Imtech = {};
+Imtech.Pager = function() {
+    this.paragraphsPerPage = 5;
+    this.currentPage = 1;
+    this.pagingControlsContainer = "#pagingControls";
+    this.pagingContainerPath = "#content";
+    
+    this.numPages = function() {
+        var numPages = 0;
+        if (this.paragraphs != null && this.paragraphsPerPage != null) {
+            numPages = Math.ceil(this.paragraphs.length / this.paragraphsPerPage);
+        }
+        
+        return numPages;
+    };
+    
+    this.showPage = function(page) {
+        this.currentPage = page;
+        var html = "";
+        for (var i = (page-1)*this.paragraphsPerPage; i < ((page-1)*this.paragraphsPerPage) + this.paragraphsPerPage; i++) {
+            if (i < this.paragraphs.length) {
+                var elem = this.paragraphs.get(i);
+                html += "<" + elem.tagName + ">" + elem.innerHTML + "</" + elem.tagName + ">";
+            }
+        }
+        
+        $(this.pagingContainerPath).html(html);
+        
+        renderControls(this.pagingControlsContainer, this.currentPage, this.numPages());
+    }
+    
+    var renderControls = function(container, currentPage, numPages) {
+        var pagingControls = "Page: <ul>";
+        for (var i = 1; i <= numPages; i++) {
+            if (i != currentPage) {
+                pagingControls += "<li><a href='#' onclick='pager.showPage(" + i + "); return false;'>" + i + "</a></li>";
+            } else {
+                pagingControls += "<li>" + i + "</li>";
+            }
+        }
+        
+        pagingControls += "</ul>";
+        
+        $(container).html(pagingControls);
+    }
+}
 // Perform a search and display the results
 function search() {
     
@@ -566,12 +612,20 @@ function search() {
 			all +=discussion;
 			all +="<br>"+document;
 			all +="<br>"+post;
-			discussion +='<div id="pagingControls"><ul>'+paginate+'</ul></li>';
+			
+			discussion +='<div id="pagingControls"></div>';
 			$("#tabs-1").html(all);
             $("#tabs-2").html(discussion);
 			$("#tabs-3").html(document);
 			$("#tabs-4").html(post);
             $("#search-info").show();
+			var pager = new Imtech.Pager();
+			$(document).ready(function() {
+				pager.paragraphsPerPage = 5; // set amount elements per page
+				pager.pagingContainer = $('#tabs-2'); // set of main container
+				pager.paragraphs = $('div.firstdiv', pager.pagingContainer); // set of required containers
+				pager.showPage(1);
+			});
             gadgets.window.adjustHeight();
         }
     });
