@@ -326,7 +326,7 @@ function expandBlog(blogId, blogpostId){
 	});
 
 }
-Var Imtech = {};
+var Imtech = {};
 Imtech.Pager = function() {
     this.paragraphsPerPage = 5;
     this.currentPage = 1;
