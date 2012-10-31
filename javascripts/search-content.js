@@ -442,7 +442,7 @@ function search() {
 								{
 								  discussionImage +='<span class="jive-icon-med jive-icon-discussion"></span>';
 								}
-								i=i+1;
+								
 								console.log("i value "+i);
 								
 								if((i>=items_per_page)&& (i%items_per_page==0))
