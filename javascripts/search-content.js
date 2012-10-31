@@ -331,7 +331,7 @@ Imtech.Pager = function() {
     this.paragraphsPerPage = 5;
     this.currentPage = 1;
     this.pagingControlsContainer = "#pagingControls";
-    this.pagingContainerPath = "#content";
+    this.pagingContainerPath = "#tabs-2";
     
     this.numPages = function() {
         var numPages = 0;
@@ -509,7 +509,7 @@ function search() {
 								console.log(page);
 								console.log(paginate);
 								//discussion +='<div id="div_'+page+'" style="'+display+'">';
-								discussion +='<div id="div_'+discussionID+'" class="firstdiv" >';                    		
+								discussion +='<p><div id="div_'+discussionID+'" class="firstdiv" >';                    		
 								discussion +='<ul>';			
 								discussion +=discussionImage+'<li><a href="'+url+'" target="_apps">'+subject+'</a></li>';			
 								discussion +='</ul>'; 
@@ -530,7 +530,7 @@ function search() {
 								discussion +='<div class="align">'+contentSummary+'</div>';                  
 								discussion +='</ul>';
 								discussion +='</div>';				                
-								discussion +='</div>';
+								discussion +='</div><p>';
 								discussion +='<br>'; 
 								//discussion +='</div>';
 								loopcheck=loopcheck+1
