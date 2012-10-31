@@ -615,7 +615,7 @@ function search() {
 			all +="<br>"+post;
 			
 			discussion +='<div><ul>'+paginate+'</ul></div>';
-			console("discussion::"+discussion);
+			console.log("discussion::"+discussion);
 			$("#tabs-1").html(all);
             $("#tabs-2").html(discussion);
 			$("#tabs-3").html(document);
