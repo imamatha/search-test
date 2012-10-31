@@ -615,7 +615,7 @@ function search() {
 			all +="<br>"+post;
 			
 			
-			console.log("discussion:::"+discussion);
+			
 			$("#tabs-1").html(all);
             
 			var pager = new Imtech.Pager();
@@ -625,7 +625,7 @@ function search() {
 				$("#tabs-2").html(discussion);
 				pager.pagingContainer = $('#tabs-2'); // set of main container
 				pager.paragraphs = $('div.firstdiv', pager.pagingContainer); // set of required containers
-				
+				console.log("discussion:::"+discussion);
 				pager.showPage(1);
 			});
 			$("#tabs-3").html(document);
