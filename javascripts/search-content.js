@@ -480,7 +480,7 @@ function search() {
 									discussion +='<li>'+page+'</li>';			
 									discussion +='</ul>';									
 									discussion +='</div>';
-									discussion="";
+									
 								}
                         }
                
