@@ -510,7 +510,7 @@ function search() {
 								console.log(page);
 								console.log(paginate);
 								//discussion +='<div id="div_'+page+'" style="'+display+'">';
-								discussion +='<p><div id="div_'+discussionID+'" class="firstdiv" >';                    		
+								discussion +='<div id="div_'+discussionID+'" class="firstdiv" >';                    		
 								discussion +='<ul>';			
 								discussion +=discussionImage+'<li><a href="'+url+'" target="_apps">'+subject+'</a></li>';			
 								discussion +='</ul>'; 
@@ -533,7 +533,7 @@ function search() {
 								discussion +='</div>';				                
 								discussion +='</div>';
 								discussion +='<br>'; 
-								discussion +='</p>';
+								//discussion +='</div>';
 								loopcheck=loopcheck+1
 								
                         }
