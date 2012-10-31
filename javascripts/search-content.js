@@ -337,6 +337,7 @@ Imtech.Pager = function() {
         var numPages = 0;
         if (this.paragraphs != null && this.paragraphsPerPage != null) {
             numPages = Math.ceil(this.paragraphs.length / this.paragraphsPerPage);
+			console.log("number of pages:::"+numPages);
         }
         
         return numPages;
@@ -344,6 +345,7 @@ Imtech.Pager = function() {
     
     this.showPage = function(page) {
         this.currentPage = page;
+		console.log("pages:::"+page);
         var html = "";
         for (var i = (page-1)*this.paragraphsPerPage; i < ((page-1)*this.paragraphsPerPage) + this.paragraphsPerPage; i++) {
             if (i < this.paragraphs.length) {
@@ -351,7 +353,7 @@ Imtech.Pager = function() {
                 html += "<" + elem.tagName + ">" + elem.innerHTML + "</" + elem.tagName + ">";
             }
         }
-        
+        console.log("html:::"+html);
         $(this.pagingContainerPath).html(html);
         
         renderControls(this.pagingControlsContainer, this.currentPage, this.numPages());
