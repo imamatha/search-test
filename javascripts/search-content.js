@@ -566,7 +566,7 @@ function search() {
 			all +=discussion;
 			all +="<br>"+document;
 			all +="<br>"+post;
-			//discussion +=<div>
+			discussion +='<div id="pagingControls"><ul>'+paginate+'</ul></li>';
 			$("#tabs-1").html(all);
             $("#tabs-2").html(discussion);
 			$("#tabs-3").html(document);
