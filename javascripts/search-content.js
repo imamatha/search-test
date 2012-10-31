@@ -369,7 +369,7 @@ Imtech.Pager = function() {
         
         pagingControls += "</ul>";
 		console.log("pageControl::::"+pagingControls);
-        
+        $("#pagingControls").html(pagingControls);
         $(container).html(pagingControls);
     }
 }
