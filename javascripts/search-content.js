@@ -381,7 +381,7 @@ function search() {
 			var page_index=0;
 			var page="";
 			var display="display:block";
-			var paginate="";
+			var paginate="<li>1</li>";
             $.each(rows, function(index, row) {
             	url=row.resources.html.ref;
 				subject=row.subject;
