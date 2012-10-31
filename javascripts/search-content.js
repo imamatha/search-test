@@ -375,10 +375,11 @@ function search() {
 			var isAnswered = 0;
 			var isQuestion = 0
 			var i=0;
-			var items_per_page =5;
+			var items_per_page =6;
 			var newcontent = '';
 			var page_index=0;
 			var page="";
+			var display="";
             $.each(rows, function(index, row) {
             	url=row.resources.html.ref;
 				subject=row.subject;
@@ -441,47 +442,44 @@ function search() {
 								{
 								  discussionImage +='<span class="jive-icon-med jive-icon-discussion"></span>';
 								}
-								
-								discussion +='<div id="div_'+discussionID+'" class="firstdiv">';                    		
-								discussion +='<ul>';			
-								discussion +=discussionImage+'<li><a href="'+url+'" target="_apps">'+subject+'</a></li>';			
-								discussion +='</ul>'; 
-								discussion +='<ul>';
-								discussion +='<span class="jive-icon-med image-button" id="'+discussionID+'"></span>';
-								discussion +='</ul>'; 
-						
-								discussion +='<div class="root1">';  
-								discussion +='<ul>';                   
-								discussion +='<li>Created by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+username+'>'+author+'</a></li>';
-								discussion +='<li>Date:'+newDate+'</li>';                    
-								discussion +='<li>Replies:'+replyCount+'</li>'; 
-								discussion +='</ul>';
-								discussion +='</div>';
-						
-								discussion +='<div class="root">';
-								discussion +='<ul>';                   
-								discussion +='<div class="align">'+contentSummary+'</div>';                  
-								discussion +='</ul>';
-								discussion +='</div>';				                
-								discussion +='</div>';
-								discussion +='<br>';   
-								
 								i=i+1;
 								console.log("i value "+i);
-								if((i>=items_per_page)&& (i%items_per_page==0))
+								var page="page_"+((i/items_per_page)+1);
+								/*if((i>=items_per_page)&& (i%items_per_page==0))
 								{
-									var page="page_"+(i/items_per_page);
+									
 									console.log("i value inside if "+i);
 									console.log(page);
 									//page=discussion;
 									console.log(page);
-									discussion +='<div class="firstdiv">';
-									discussion +='<ul>';			
-									discussion +='<li>'+page+'</li>';			
-									discussion +='</ul>';									
-									discussion +='</div>';
-									
-								}
+																		
+								}*/
+								console.log(page);
+								page +='<div id="div_'+discussionID+'" class="firstdiv" style="">';                    		
+								page +='<ul>';			
+								page +=discussionImage+'<li><a href="'+url+'" target="_apps">'+subject+'</a></li>';			
+								page +='</ul>'; 
+								page +='<ul>';
+								page +='<span class="jive-icon-med image-button" id="'+discussionID+'"></span>';
+								page +='</ul>'; 
+						
+								page +='<div class="root1">';  
+								page +='<ul>';                   
+								page +='<li>Created by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+username+'>'+author+'</a></li>';
+								page +='<li>Date:'+newDate+'</li>';                    
+								page +='<li>Replies:'+replyCount+'</li>'; 
+								page +='</ul>';
+								page +='</div>';
+						
+								page +='<div class="root">';
+								page +='<ul>';                   
+								page +='<div class="align">'+contentSummary+'</div>';                  
+								page +='</ul>';
+								page +='</div>';				                
+								page +='</div>';
+								page +='<br>';   
+								
+								
                         }
                
                
