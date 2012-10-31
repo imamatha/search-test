@@ -500,7 +500,7 @@ function search() {
 									console.log("Inside If value ");
 									i=i+1;
 									display="display:none";
-									paginate +='<li>'+i+'</li>';	
+									paginate +='<li><a href='#' onclick='pager.showPage(i); return false;'>'+i+'</li>';	
 								}
 								else
 								{
@@ -614,7 +614,7 @@ function search() {
 			all +="<br>"+document;
 			all +="<br>"+post;
 			
-			
+			discussion +='<div><ul>'+paginate+'</ul></div>';
 			
 			$("#tabs-1").html(all);
             $("#tabs-2").html(discussion);
