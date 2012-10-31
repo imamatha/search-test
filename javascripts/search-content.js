@@ -445,6 +445,7 @@ function search() {
 								}
 								
 								console.log("i value "+i);
+								console.log("loopcheck value "+loopcheck);
 								
 								if((loopcheck>=items_per_page)&& (loopcheck%items_per_page==0))
 								{
