@@ -473,7 +473,7 @@ function search() {
 									var page="page_"+(i/items_per_page);
 									console.log("i value inside if "+i);
 									console.log(page);
-									page=discussion;
+									//page=discussion;
 									console.log(page);
 									discussion +='<div class="firstdiv">';
 									discussion +='<ul>';			
