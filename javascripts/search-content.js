@@ -614,7 +614,7 @@ function search() {
 			all +="<br>"+document;
 			all +="<br>"+post;
 			
-			discussion +='<div id="pagingControls"></div></p>';
+			
 			console.log("discussion:::"+discussion);
 			$("#tabs-1").html(all);
             $("#tabs-2").html(discussion);
@@ -623,6 +623,7 @@ function search() {
 				pager.paragraphsPerPage = 3; // set amount elements per page
 				pager.pagingContainer = $('#tabs-2'); // set of main container
 				pager.paragraphs = $('div.firstdiv', pager.pagingContainer); // set of required containers
+				discussion +='<div id="pagingControls"></div></p>';
 				pager.showPage(1);
 			});
 			$("#tabs-3").html(document);
