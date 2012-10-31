@@ -66,6 +66,7 @@ text-decoration:underline;
     text-decoration: none;
 	border: solid 1px #AAE;
 	color: #15B;
+	border: 1px solid black;
 }
 .image-button{
     /*background-position: -176px -1360px; */
