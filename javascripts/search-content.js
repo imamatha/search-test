@@ -533,7 +533,7 @@ function search() {
 								discussion +='</div>';				                
 								discussion +='</div>';
 								discussion +='<br>'; 
-								//discussion +='</div>';
+								discussion +='</p>';
 								loopcheck=loopcheck+1
 								
                         }
@@ -613,7 +613,7 @@ function search() {
 			all +=discussion;
 			all +="<br>"+document;
 			all +="<br>"+post;
-			discussion +='<div id="pagingControls"></div></p>';
+			
 			
 			
 			$("#tabs-1").html(all);
@@ -623,10 +623,8 @@ function search() {
             $("#search-info").show();
 			var pager = new Imtech.Pager();
 			$(document).ready(function() {
-				
 				pager.paragraphsPerPage = 3; // set amount elements per page
-				
-				pager.pagingContainer = $('#tabs-1'); // set of main container
+				pager.pagingContainer = $('#tabs-2'); // set of main container
 				pager.paragraphs = $('div.firstdiv', pager.pagingContainer); // set of required containers
 				console.log("discussion:::"+discussion);
 				pager.showPage(1);
