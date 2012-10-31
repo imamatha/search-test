@@ -444,7 +444,7 @@ function search() {
 								}
 								i=i+1;
 								console.log("i value "+i);
-								var page="page_"+((i/items_per_page)+1);
+								var page="page_"+((i%items_per_page)+1);
 								/*if((i>=items_per_page)&& (i%items_per_page==0))
 								{
 									
