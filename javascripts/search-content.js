@@ -509,7 +509,7 @@ function search() {
 								console.log(page);
 								console.log(paginate);
 								discussion +='<div id="div_'+page+'" style="'+display+'">';
-								discussion +='<div id="div_'+discussionID+'" class="firstdiv" style="">';                    		
+								discussion +='<div id="div_'+discussionID+'" class="firstdiv" >';                    		
 								discussion +='<ul>';			
 								discussion +=discussionImage+'<li><a href="'+url+'" target="_apps">'+subject+'</a></li>';			
 								discussion +='</ul>'; 
