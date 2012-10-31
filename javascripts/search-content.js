@@ -475,7 +475,12 @@ function search() {
 									console.log(page);
 									page=discussion;
 									console.log(page);
-									
+									discussion +='<div class="firstdiv">';
+									discussion +='<ul>';			
+									discussion +='<li>'+page+'</li>';			
+									discussion +='</ul>';									
+									discussion +='</div>';
+									discussion="";
 								}
                         }
                
