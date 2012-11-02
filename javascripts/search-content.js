@@ -356,7 +356,7 @@ Imtech.Pager = function() {
         }
         console.log("html:::"+html);
         $(this.pagingContainerPath).html(html);
-         
+          $(this.pagingContainerPath).html(html).append(pagingControls);
         renderControls(this.pagingControlsContainer, this.currentPage, this.numPages());
     }
     
@@ -374,7 +374,6 @@ Imtech.Pager = function() {
 		console.log("pageControl::::"+pagingControls);
         console.log("container::::"+container);
         $(container).html(pagingControls);
-		 $(this.pagingContainerPath).html(html).append(pagingControls);
     }
 }
 // Perform a search and display the results
@@ -618,10 +617,10 @@ function search() {
 			all +="<br>"+document;
 			all +="<br>"+post;
 			
-			discussion +='<div id="pagingControls">dvfdgdfgdfgdfgdfg</div>';
+			
 			console.log("discussion::"+discussion);
 			$("#tabs-1").html(all);
-           $("#tabs-2").html(discussion);
+			$("#tabs-2").html(discussion);
 			$("#tabs-3").html(document);
 			$("#tabs-4").html(post);
             $("#search-info").show();
