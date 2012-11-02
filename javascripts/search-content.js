@@ -3,7 +3,16 @@ function init() {
    
     $("#search").click(search);
 	//$(".image-button").click(expand);
-    gadgets.window.adjustHeight();
+   
+	var pager = new Imtech.Pager();
+			$(document).ready(function() {
+				pager.paragraphsPerPage = 5; // set amount elements per page
+				pager.pagingContainer = $('#tabs-2'); // set of main container
+				pager.paragraphs = $('div.firstdiv', pager.pagingContainer); // set of required containers
+				pager.showPage(1);
+				
+			});
+	 gadgets.window.adjustHeight();
    
 }
 $("span.image-button").live('click', function () {
@@ -624,7 +633,8 @@ function search() {
 			$("#tabs-3").html(document);
 			$("#tabs-4").html(post);
             $("#search-info").show();
-			gadgets.window.adjustHeight();
+			
+            gadgets.window.adjustHeight();
         }
     });
 }
