@@ -346,6 +346,7 @@ Imtech.Pager = function() {
     this.showPage = function(page) {
         this.currentPage = page;
 		console.log("pages:::"+page);
+		console.log("Length::"+this.paragraphs.length);
         var html = "";
         for (var i = (page-1)*this.paragraphsPerPage; i < ((page-1)*this.paragraphsPerPage) + this.paragraphsPerPage; i++) {
             if (i < this.paragraphs.length) {
