@@ -34,6 +34,7 @@ $("span.image-button").live('click', function () {
 	
  $(function() {
         $( "#tabs" ).tabs();
+		console.log("Inside Tab logic jq");
     });
 
  function monthConvert(d){
@@ -326,56 +327,7 @@ function expandBlog(blogId, blogpostId){
 	});
 
 }
-var Imtech = {};
-Imtech.Pager = function() {
-    this.paragraphsPerPage = 5;
-    this.currentPage = 1;
-    this.pagingControlsContainer = "#pagingControls";
-    this.pagingContainerPath = "#tabs-2";
-    
-    this.numPages = function() {
-        var numPages = 0;
-        if (this.paragraphs != null && this.paragraphsPerPage != null) {
-            numPages = Math.ceil(this.paragraphs.length / this.paragraphsPerPage);
-			console.log("number of pages:::"+numPages);
-        }
-        
-        return numPages;
-    };
-    
-    this.showPage = function(page) {
-        this.currentPage = page;
-		console.log("pages:::"+page);
-		console.log("Length::"+this.paragraphs.length);
-        var html = "";
-        for (var i = (page-1)*this.paragraphsPerPage; i < ((page-1)*this.paragraphsPerPage) + this.paragraphsPerPage; i++) {
-            if (i < this.paragraphs.length) {
-                var elem = this.paragraphs.get(i);
-                html += "<" + elem.tagName + ">" + elem.innerHTML + "</" + elem.tagName + ">";
-            }
-        }
-        console.log("html:::"+html);
-        $(this.pagingContainerPath).html(html);
-          $(this.pagingContainerPath).html(html).append(pagingControls);
-        renderControls(this.pagingControlsContainer, this.currentPage, this.numPages());
-    }
-    
-    var renderControls = function(container, currentPage, numPages) {
-        var pagingControls = "Page: <ul>";
-        for (var i = 1; i <= numPages; i++) {
-            if (i != currentPage) {
-                pagingControls += "<li><a href='#' onclick='pager.showPage(" + i + "); return false;'>" + i + "</a></li>";
-            } else {
-                pagingControls += "<li>" + i + "</li>";
-            }
-        }
-        
-        pagingControls += "</ul>";
-		console.log("pageControl::::"+pagingControls);
-        console.log("container::::"+container);
-        $(container).html(pagingControls);
-    }
-}
+
 // Perform a search and display the results
 function search() {
     
