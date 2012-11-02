@@ -629,7 +629,7 @@ function search() {
 			{
 				$(document).ready(function() {
 					pager.paragraphsPerPage = 5; // set amount elements per page
-					pager.pagingContainer = discussion; // set of main container
+					pager.pagingContainer = $("#tabs-2").html(discussion); // set of main container
 					pager.paragraphs = $('div.firstdiv', pager.pagingContainer); // set of required containers
 					pager.showPage(1);
 					
