@@ -356,7 +356,7 @@ Imtech.Pager = function() {
         }
         console.log("html:::"+html);
         $(this.pagingContainerPath).html(html);
-          $(this.pagingContainerPath).html(html).append(pagingControls);
+         
         renderControls(this.pagingControlsContainer, this.currentPage, this.numPages());
     }
     
@@ -374,6 +374,7 @@ Imtech.Pager = function() {
 		console.log("pageControl::::"+pagingControls);
         console.log("container::::"+container);
         $(container).html(pagingControls);
+		 $(this.pagingContainerPath).html(html).append(pagingControls);
     }
 }
 // Perform a search and display the results
