@@ -620,7 +620,7 @@ function search() {
 			discussion +='<div id="pagingControls">dvfdgdfgdfgdfgdfg</div>';
 			console.log("discussion::"+discussion);
 			$("#tabs-1").html(all);
-            $("#tabs-2").html(discussion);
+           // $("#tabs-2").html(discussion);
 			$("#tabs-3").html(document);
 			$("#tabs-4").html(post);
             $("#search-info").show();
