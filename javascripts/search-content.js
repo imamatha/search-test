@@ -327,18 +327,18 @@ function expandBlog(blogId, blogpostId){
 	});
 
 }
-function showPage(page,type)
+function showPage(page)
 {
  $(".maindiv").hide();
 
 var totalPage=100;
- var selectedPage=".div_page_"+type+'_'+page;
+ var selectedPage=".div_page_"+page;
  console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
  for (var i = 1; i <=totalPage; i++) {
       if(i==page)
 	  {
 		console.log("Inside show if" +i);
-		$('.div_page_'+type+'_'+i).css('display', 'block');
+		$('.div_page_'+i).css('display', 'block');
 		//$(selectedPage).show();
 		$(".maindiv").show();
 	  }
@@ -346,7 +346,7 @@ var totalPage=100;
 	  {
 		console.log("Inside hide else" +i);
 		//$('#div_page_'+i).css('display', 'none');
-		 $('.div_page_'+type+'_'+i).hide();
+		 $('.div_page_'+i).hide();
 	  }
     }
  
@@ -405,16 +405,14 @@ function search() {
 			var isAnswered = 0;
 			var isQuestion = 0
 			var i=1;
-			var loopcheckdis=0;
-			var loopcheckdoc=0;
-			var loopcheckblog=0;
+			var loopcheck=0;
 			var items_per_page =5;
 			var newcontent = '';
 			var page_index=0;
 			var page="";
 			var numPages = 0;
 			var display="display:block";
-			var paginate="<li><a href='#' onclick='showPage(1,"'dis'"); return false;'>1</a></li>";
+			var paginate="<li><a href='#' onclick='showPage(1); return false;'>1</a></li>";
 			discussion +='<div  class="maindiv" >'; 
             $.each(rows, function(index, row) {
             	url=row.resources.html.ref;
@@ -480,23 +478,22 @@ function search() {
 								}
 								
 								console.log("i value "+i);
-								console.log("loopcheckdis value "+loopcheckdis +"items_per_page  "+items_per_page);
+								console.log("loopcheck value "+loopcheck +"items_per_page  "+items_per_page);
 								
-								if((loopcheckdis>=items_per_page)&& (loopcheckdis%items_per_page==0))
+								if((loopcheck>=items_per_page)&& (loopcheck%items_per_page==0))
 								{
 									console.log("Inside If value ");
 									
 									i=i+1;
 									display="display:none";
-									var type="dis"
 									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
-									paginate += "<li><a href='#' onclick='showPage(" + i + ","+type+"); return false;'>" + i + "</a></li>";
+									paginate += "<li><a href='#' onclick='showPage(" + i + "," +numPages +"); return false;'>" + i + "</a></li>";
 								}
 								else
 								{
 									i=i;
 								}
-								var page="page_dis_"+i;
+								var page="page_"+i;
 								console.log(page);
 								console.log(paginate);
 								
@@ -525,7 +522,7 @@ function search() {
 								discussion +='</div>';
 								//discussion +='<br>'; 
 								discussion +='</div>';
-								loopcheckdis=loopcheckdis+1
+								loopcheck=loopcheck+1
 								
                         }
 						numPages = i;
@@ -533,23 +530,8 @@ function search() {
 						if(row.type=="document"){
 						
 							var docID = (url.substring(url.lastIndexOf("-"))).substr(1);
-							if((loopcheckdoc>=items_per_page)&& (loopcheckdoc%items_per_page==0))
-								{
-									console.log("Inside If value ");
-									
-									i=i+1;
-									display="display:none";
-									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
-									paginate += "<li><a href='#' onclick='showPage(" + i + ",'doc'); return false;'>" + i + "</a></li>";
-								}
-								else
-								{
-									i=i;
-								}
-								var page="page_doc_"+i;
 							
                     		document +='<div id="div_'+docID+'" class="firstdiv"> ';
-							document +='<div class="div_'+page+'" style="'+display+'">';	
 							document +='<ul>';
                     		document +='<span class="jive-icon-med jive-icon-document"></span><li> <a href="'+url+'" target="_apps">'+subject+'</a></li>';
                     		document +='</ul>';
@@ -573,7 +555,7 @@ function search() {
                                        
                     		document +='</div>';
                     		document +='<br>';
-							loopcheckdoc=loopcheckdoc+1
+                      
                         }
 						
 					if(row.type=="post"){
