@@ -327,7 +327,10 @@ function expandBlog(blogId, blogpostId){
 	});
 
 }
-
+function showPage(page)
+{
+	$('#div_'+page).css('display', '#none');
+}
 // Perform a search and display the results
 function search() {
     
