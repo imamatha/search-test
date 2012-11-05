@@ -329,28 +329,6 @@ function expandBlog(blogId, blogpostId){
 }
 function showPage(page)
 {
-var pager = new Imtech.Pager();  
-
- $(document).ready(function() {  
-
-     pager.paragraphsPerPage = 5; // set amount elements per page  
-
-     pager.pagingContainer = $('#tabs-2'); // set of main container  
-
-     pager.paragraphs = $('div.first', pager.pagingContainer); // set of required containers  
-
-     pager.showPage(1);  
-
- });
- 
-	
-}
-var Imtech = {};
-Imtech.Pager = function() {
-if (this.paragraphs != null && this.paragraphsPerPage != null) {
-            numPages = Math.ceil(this.paragraphs.length / this.paragraphsPerPage);
-			console.log("number of pages:::"+numPages);
-        } 
 var totalPage=numPages;
  var selectedPage="#div_"+page;
  console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
@@ -366,8 +344,13 @@ var totalPage=numPages;
 		$(selectedPage).css('display', 'block');
 	  }
     }
-
+ 
+	
 }
+
+
+
+
 // Perform a search and display the results
 function search() {
     
