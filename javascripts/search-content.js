@@ -329,10 +329,27 @@ function expandBlog(blogId, blogpostId){
 }
 function showPage(page)
 {
+var pager = new Imtech.Pager();  
+
+ $(document).ready(function() {  
+
+     pager.paragraphsPerPage = 5; // set amount elements per page  
+
+     pager.pagingContainer = $('#tabs-2'); // set of main container  
+
+     pager.paragraphs = $('div.first', pager.pagingContainer); // set of required containers  
+
+     pager.showPage(1);  
+
+ }); 
+if (this.paragraphs != null && this.paragraphsPerPage != null) {
+            numPages = Math.ceil(this.paragraphs.length / this.paragraphsPerPage);
+			console.log("number of pages:::"+numPages);
+        } 
 var totalPage=numPages;
  var selectedPage="#div_"+page;
- console.log("Inside show page:::"+selectedPage +"Total Page::"+totalpage);
- for (var i = 1; i < totalpage; i++) {
+ console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
+ for (var i = 1; i < totalPage; i++) {
       if(i==page)
 	  {
 		console.log("Inside show if");
