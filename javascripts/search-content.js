@@ -488,8 +488,9 @@ function search() {
 									
 									i=i+1;
 									display="display:none";
+									var type="dis"
 									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
-									paginate += "<li><a href='#' onclick='showPage(" + i + ","'dis'"); return false;'>" + i + "</a></li>";
+									paginate += "<li><a href='#' onclick='showPage(" + i + ","+type+"); return false;'>" + i + "</a></li>";
 								}
 								else
 								{
