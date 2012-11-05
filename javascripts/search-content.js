@@ -596,7 +596,6 @@ function search() {
 			
 			console.log("discussion::"+discussion);
 			$("#tabs-1").html(all);
-			if
 			discussion +='<div class="pagingControls">Page: <ul>'+paginate+'<ul></div>';
 			$("#tabs-2").html(discussion);
 			$("#tabs-3").html(document);
