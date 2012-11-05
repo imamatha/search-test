@@ -331,7 +331,7 @@ function showPage(page)
 {
  $(".maindiv").hide();
 
-var totalPage=3;
+var totalPage=2;
  var selectedPage=".div_page_"+page;
  console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
  for (var i = 1; i <=totalPage; i++) {
