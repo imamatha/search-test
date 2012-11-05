@@ -334,7 +334,7 @@ function showPage(page)
 var totalPage=3;
  var selectedPage="#div_page_"+page;
  console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
- for (var i = 1; i < totalPage; i++) {
+ for (var i = 1; i <=totalPage; i++) {
       if(i==page)
 	  {
 		console.log("Inside show if" +i);
