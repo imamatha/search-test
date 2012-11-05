@@ -413,6 +413,7 @@ function search() {
 			var numPages = 0;
 			var display="display:block";
 			var paginate="<li>1</li>";
+			discussion +='<div  class="maindiv" >'; 
             $.each(rows, function(index, row) {
             	url=row.resources.html.ref;
 				subject=row.subject;
@@ -606,7 +607,7 @@ function search() {
 			
 			console.log("discussion::"+discussion);
 			$("#tabs-1").html(all);
-			discussion +='<div class="pagingControls">Page: <ul>'+paginate+'<ul></div>';
+			discussion +='<div class="pagingControls">Page: <ul>'+paginate+'<ul></div></div>';
 			$("#tabs-2").html(discussion);
 			$("#tabs-3").html(document);
 			$("#tabs-4").html(post);

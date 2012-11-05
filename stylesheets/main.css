@@ -40,6 +40,10 @@ text-decoration:underline;
     float: left;
     padding: 0;
 }
+.maindiv
+{
+    display: block;
+}
 
 .jive-icon-document {
     background-position: -16px -80px;
