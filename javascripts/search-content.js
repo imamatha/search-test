@@ -455,7 +455,8 @@ function search() {
 									console.log("Inside If value ");
 									i=i+1;
 									display="display:none";
-									paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
+									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
+									paginate += "<li><a href='#' onclick='showPage(" + i + "); return false;'>" + i + "</a></li>";
 								}
 								else
 								{
@@ -573,7 +574,7 @@ function search() {
 			
 			console.log("discussion::"+discussion);
 			$("#tabs-1").html(all);
-			discussion +='<div class="pagingControls"><ul>'+paginate+'<ul></div>';
+			discussion +='<div class="pagingControls">Page: <ul>'+paginate+'<ul></div>';
 			$("#tabs-2").html(discussion);
 			$("#tabs-3").html(document);
 			$("#tabs-4").html(post);
