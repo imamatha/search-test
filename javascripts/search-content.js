@@ -330,14 +330,16 @@ function expandBlog(blogId, blogpostId){
 function showPage(page,totalpage)
 {
  var selectedPage="#div_"+page;
- console.log("Inside show page:::"+selectedPage);
+ console.log("Inside show page:::"+selectedPage +"Total Page::"+totalpage);
  for (var i = 1; i < page; i++) {
       if(totalpage==page)
 	  {
+		console.log("Inside show if");
 		$(selectedPage).css('display', 'none');
 	  }
 	  else
 	  {
+		console.log("Inside show else");
 		$(selectedPage).css('display', 'block');
 	  }
     }
