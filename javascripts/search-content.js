@@ -412,7 +412,7 @@ function search() {
 			var page="";
 			var numPages = 0;
 			var display="display:block";
-			var paginate="<li>1</li>";
+			var paginate="<li><a href='#' onclick='showPage(1); return false;'>1</a></li>";
 			discussion +='<div  class="maindiv" >'; 
             $.each(rows, function(index, row) {
             	url=row.resources.html.ref;
