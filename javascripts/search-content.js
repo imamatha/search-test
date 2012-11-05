@@ -332,21 +332,21 @@ function showPage(page)
  $(".maindiv").hide();
 
 var totalPage=3;
- var selectedPage="#div_page_"+page;
+ var selectedPage=".div_page_"+page;
  console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
  for (var i = 1; i <=totalPage; i++) {
       if(i==page)
 	  {
 		console.log("Inside show if" +i);
-		//$('#div_page_'+i).css('display', 'block');
-		$(selectedPage).show();
+		$('.div_page_'+i).css('display', 'block');
+		//$(selectedPage).show();
 		$(".maindiv").show();
 	  }
 	  else
 	  {
 		console.log("Inside hide else" +i);
 		//$('#div_page_'+i).css('display', 'none');
-		 $('#div_page_'+i).hide();
+		 $('.div_page_'+i).hide();
 	  }
     }
  
@@ -498,7 +498,7 @@ function search() {
 								console.log(paginate);
 								
 								discussion +='<div id="div_'+discussionID+'" class="firstdiv" >'; 
-								discussion +='<div id="div_'+page+'" style="'+display+'">';								
+								discussion +='<div class="div_'+page+'" style="'+display+'">';								
 								discussion +='<ul>';			
 								discussion +=discussionImage+'<li><a href="'+url+'" target="_apps">'+subject+'</a></li>';			
 								discussion +='</ul>'; 
