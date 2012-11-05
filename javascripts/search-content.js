@@ -335,16 +335,16 @@ var totalPage=3;
  for (var i = 1; i < totalPage; i++) {
       if(i==page)
 	  {
-		console.log("Inside show if");
-		//$('#div_'+i).css('visibility', 'show');
-		 $(selectedPage).show();
+		console.log("Inside show if" +i);
+		$('#div_page_'+i).css('display', 'block');
+		// $(selectedPage).show();
 
 	  }
 	  else
 	  {
-		console.log("Inside show else");
-		//$('#div_'+i).css('visibility', 'hidden');
-		 $('#div_page_'+i).hide();
+		console.log("Inside show else" +i);
+		$('#div_page_'+i).css('display', 'none');
+		// $('#div_page_'+i).hide();
 	  }
     }
  
