@@ -569,6 +569,7 @@ function search() {
 			all +="<br>"+document;
 			all +="<br>"+post;
 			
+			discussion +='<div><ul>'+paginate+'<ul></div>';
 			
 			console.log("discussion::"+discussion);
 			$("#tabs-1").html(all);
