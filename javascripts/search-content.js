@@ -340,7 +340,7 @@ var totalPage=3;
 		console.log("Inside show if" +i);
 		$('#div_page_'+i).css('display', 'block');
 		// $(selectedPage).show();
-		$(".firstdiv").show();
+		$(".maindiv").show();
 	  }
 	  else
 	  {
