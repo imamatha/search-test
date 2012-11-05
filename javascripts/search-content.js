@@ -329,6 +329,8 @@ function expandBlog(blogId, blogpostId){
 }
 function showPage(page)
 {
+ $(".firstdiv").hide();
+
 var totalPage=3;
  var selectedPage="#div_page_"+page;
  console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
@@ -338,11 +340,11 @@ var totalPage=3;
 		console.log("Inside show if" +i);
 		$('#div_page_'+i).css('display', 'block');
 		// $(selectedPage).show();
-
+		$(".firstdiv").show();
 	  }
 	  else
 	  {
-		console.log("Inside show else" +i);
+		console.log("Inside hide else" +i);
 		$('#div_page_'+i).css('display', 'none');
 		// $('#div_page_'+i).hide();
 	  }
@@ -493,8 +495,9 @@ function search() {
 								var page="page_"+i;
 								console.log(page);
 								console.log(paginate);
-								discussion +='<div id="div_'+page+'" style="'+display+'">';
-								discussion +='<div id="div_'+discussionID+'" class="firstdiv" >';                    		
+								
+								discussion +='<div id="div_'+discussionID+'" class="firstdiv" >'; 
+								discussion +='<div id="div_'+page+'" style="'+display+'">';								
 								discussion +='<ul>';			
 								discussion +=discussionImage+'<li><a href="'+url+'" target="_apps">'+subject+'</a></li>';			
 								discussion +='</ul>'; 
