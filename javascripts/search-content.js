@@ -342,7 +342,10 @@ var pager = new Imtech.Pager();
      pager.showPage(1);  
 
  });
- var Imtech = {};
+ 
+	
+}
+var Imtech = {};
 Imtech.Pager = function() {
 if (this.paragraphs != null && this.paragraphsPerPage != null) {
             numPages = Math.ceil(this.paragraphs.length / this.paragraphsPerPage);
@@ -364,8 +367,6 @@ var totalPage=numPages;
 	  }
     }
 
-}
-	
 }
 // Perform a search and display the results
 function search() {
