@@ -455,7 +455,7 @@ function search() {
 									console.log("Inside If value ");
 									i=i+1;
 									display="display:none";
-									paginate +="<li><a href='#' onclick='pager.showPage(i); return false;'>'"+i+"'</li>";	
+									paginate +="<li><a href='#' onclick='showPage(i); return false;'>'"+i+"'</li>";	
 								}
 								else
 								{
@@ -464,7 +464,7 @@ function search() {
 								var page="page_"+i;
 								console.log(page);
 								console.log(paginate);
-								//discussion +='<div id="div_'+page+'" style="'+display+'">';
+								discussion +='<div id="div_'+page+'" style="'+display+'">';
 								discussion +='<div id="div_'+discussionID+'" class="firstdiv" >';                    		
 								discussion +='<ul>';			
 								discussion +=discussionImage+'<li><a href="'+url+'" target="_apps">'+subject+'</a></li>';			
