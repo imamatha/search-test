@@ -331,7 +331,7 @@ function showPage(page)
 {
  $(".maindiv").hide();
 
-var totalPage=2;
+var totalPage=100;
  var selectedPage=".div_page_"+page;
  console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
  for (var i = 1; i <=totalPage; i++) {
@@ -598,19 +598,19 @@ function search() {
 			
 				
             //console.log(html);
-			all +=discussion;
-			all +="<br>"+document;
-			all +="<br>"+post;
+			//all +=discussion;
+			//all +="<br>"+document;
+			//all +="<br>"+post;
 			
 			console.log("no Of pages::"+numPages)
 			
 			
 			console.log("discussion::"+discussion);
-			$("#tabs-1").html(all);
+			//$("#tabs-1").html(all);
 			discussion +='<div class="pagingControls">Page: <ul>'+paginate+'<ul></div></div>';
-			$("#tabs-2").html(discussion);
-			$("#tabs-3").html(document);
-			$("#tabs-4").html(post);
+			$("#tabs-1").html(discussion);
+			$("#tabs-2").html(document);
+			$("#tabs-3").html(post);
             $("#search-info").show();
 			gadgets.window.adjustHeight();
         }
