@@ -327,14 +327,14 @@ function expandBlog(blogId, blogpostId){
 	});
 
 }
-function showPage(page)
+function showPage(page,totalpages)
 {
  $(".maindiv").hide();
 
 var totalPage=100;
  var selectedPage=".div_page_"+page;
- console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
- for (var i = 1; i <=totalPage; i++) {
+ console.log("Inside show page:::"+selectedPage +"Total Page::"+totalpages);
+ for (var i = 1; i <=totalpages; i++) {
       if(i==page)
 	  {
 		console.log("Inside show if" +i);
