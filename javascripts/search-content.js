@@ -344,7 +344,7 @@ var totalPage=3;
 	  {
 		console.log("Inside show else");
 		//$('#div_'+i).css('visibility', 'hidden');
-		 $('div_page__'+i).hide();
+		 $('#div_page_'+i).hide();
 	  }
     }
  
