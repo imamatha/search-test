@@ -337,7 +337,7 @@ var totalPage=3;
 	  {
 		console.log("Inside show if");
 		//$('#div_'+i).css('visibility', 'show');
-		 $('#div_'+i).show();
+		 $(selectedPage).show();
 
 	  }
 	  else
