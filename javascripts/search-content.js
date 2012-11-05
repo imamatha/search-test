@@ -414,7 +414,7 @@ function search() {
 			var page="";
 			var numPages = 0;
 			var display="display:block";
-			var paginate="<li><a href='#' onclick='showPage(1,dis); return false;'>1</a></li>";
+			var paginate="<li><a href='#' onclick='showPage(1,"'dis'"); return false;'>1</a></li>";
 			discussion +='<div  class="maindiv" >'; 
             $.each(rows, function(index, row) {
             	url=row.resources.html.ref;
@@ -489,7 +489,7 @@ function search() {
 									i=i+1;
 									display="display:none";
 									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
-									paginate += "<li><a href='#' onclick='showPage(" + i + ",dis); return false;'>" + i + "</a></li>";
+									paginate += "<li><a href='#' onclick='showPage(" + i + ","'dis'"); return false;'>" + i + "</a></li>";
 								}
 								else
 								{
