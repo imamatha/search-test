@@ -336,12 +336,12 @@ var totalPage=3;
       if(i==page)
 	  {
 		console.log("Inside show if");
-		$(selectedPage).css('display', 'none');
+		$('#div_'+i).css('display', 'block');
 	  }
 	  else
 	  {
 		console.log("Inside show else");
-		$(selectedPage).css('display', 'block');
+		$('#div_'+i).css('display', 'none');
 	  }
     }
  
