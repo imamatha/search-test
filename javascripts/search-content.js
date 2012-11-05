@@ -488,7 +488,7 @@ function search() {
 								discussion +='</div>';				                
 								discussion +='</div>';
 								//discussion +='<br>'; 
-								//discussion +='</div>';
+								discussion +='</div>';
 								loopcheck=loopcheck+1
 								
                         }
@@ -569,10 +569,11 @@ function search() {
 			all +="<br>"+document;
 			all +="<br>"+post;
 			
-			discussion +='<div><ul>'+paginate+'<ul></div>';
+			
 			
 			console.log("discussion::"+discussion);
 			$("#tabs-1").html(all);
+			discussion +='<div><ul>'+paginate+'<ul></div>';
 			$("#tabs-2").html(discussion);
 			$("#tabs-3").html(document);
 			$("#tabs-4").html(post);
