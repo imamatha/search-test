@@ -573,7 +573,7 @@ function search() {
 			
 			console.log("discussion::"+discussion);
 			$("#tabs-1").html(all);
-			discussion +='<div><ul>'+paginate+'<ul></div>';
+			discussion +='<div class="pagingControls"><ul>'+paginate+'<ul></div>';
 			$("#tabs-2").html(discussion);
 			$("#tabs-3").html(document);
 			$("#tabs-4").html(post);
