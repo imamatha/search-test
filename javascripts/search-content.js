@@ -337,14 +337,14 @@ var totalPage=3;
 	  {
 		console.log("Inside show if");
 		//$('#div_'+i).css('visibility', 'show');
-		 $('#div_'+i).show("fast");
+		 $('#div_'+i).show();
 
 	  }
 	  else
 	  {
 		console.log("Inside show else");
-		/$('#div_'+i).css('visibility', 'hidden');
-		$('#div_'+i).hide("fast");
+		//$('#div_'+i).css('visibility', 'hidden');
+		 $('#div_'+i).hide();
 	  }
     }
  
