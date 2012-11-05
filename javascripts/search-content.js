@@ -330,7 +330,7 @@ function expandBlog(blogId, blogpostId){
 function showPage(page)
 {
 var totalPage=3;
- var selectedPage="#div_"+page;
+ var selectedPage="#div_page_"+page;
  console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
  for (var i = 1; i < totalPage; i++) {
       if(i==page)
@@ -344,7 +344,7 @@ var totalPage=3;
 	  {
 		console.log("Inside show else");
 		//$('#div_'+i).css('visibility', 'hidden');
-		 $('#div_'+i).hide();
+		 $('div_page__'+i).hide();
 	  }
     }
  
