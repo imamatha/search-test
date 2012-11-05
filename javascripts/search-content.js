@@ -592,6 +592,7 @@ function search() {
 			all +="<br>"+document;
 			all +="<br>"+post;
 			
+			console.log("no Of pages::"+numPages)
 			
 			
 			console.log("discussion::"+discussion);
