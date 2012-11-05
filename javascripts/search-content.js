@@ -327,12 +327,13 @@ function expandBlog(blogId, blogpostId){
 	});
 
 }
-function showPage(page,totalpage)
+function showPage(page)
 {
+var totalPage=numPages;
  var selectedPage="#div_"+page;
  console.log("Inside show page:::"+selectedPage +"Total Page::"+totalpage);
- for (var i = 1; i < page; i++) {
-      if(totalpage==page)
+ for (var i = 1; i < totalpage; i++) {
+      if(i==page)
 	  {
 		console.log("Inside show if");
 		$(selectedPage).css('display', 'none');
@@ -472,8 +473,7 @@ function search() {
 								if((loopcheck>=items_per_page)&& (loopcheck%items_per_page==0))
 								{
 									console.log("Inside If value ");
-									var numPages = 0;
-									numPages = Math.ceil(loopcheck / items_per_page);
+									
 									i=i+1;
 									display="display:none";
 									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
@@ -583,8 +583,9 @@ function search() {
 					
                                   
             });
-           
-			
+          
+			var numPages = 0;
+			numPages = i;
 				
             //console.log(html);
 			all +=discussion;
@@ -595,6 +596,7 @@ function search() {
 			
 			console.log("discussion::"+discussion);
 			$("#tabs-1").html(all);
+			if
 			discussion +='<div class="pagingControls">Page: <ul>'+paginate+'<ul></div>';
 			$("#tabs-2").html(discussion);
 			$("#tabs-3").html(document);
