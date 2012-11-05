@@ -327,18 +327,18 @@ function expandBlog(blogId, blogpostId){
 	});
 
 }
-function showPage(page,totalpages)
+function showPage(page,type)
 {
  $(".maindiv").hide();
 
 var totalPage=100;
- var selectedPage=".div_page_"+page;
- console.log("Inside show page:::"+selectedPage +"Total Page::"+totalpages);
- for (var i = 1; i <=totalpages; i++) {
+ var selectedPage=".div_page_"+type+'_'+page;
+ console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
+ for (var i = 1; i <=totalPage; i++) {
       if(i==page)
 	  {
 		console.log("Inside show if" +i);
-		$('.div_page_'+i).css('display', 'block');
+		$('.div_page_'+type+'_'+i).css('display', 'block');
 		//$(selectedPage).show();
 		$(".maindiv").show();
 	  }
@@ -346,7 +346,7 @@ var totalPage=100;
 	  {
 		console.log("Inside hide else" +i);
 		//$('#div_page_'+i).css('display', 'none');
-		 $('.div_page_'+i).hide();
+		 $('.div_page_'+type+'_'+i).hide();
 	  }
     }
  
@@ -405,7 +405,9 @@ function search() {
 			var isAnswered = 0;
 			var isQuestion = 0
 			var i=1;
-			var loopcheck=0;
+			var loopcheckdis=0;
+			var loopcheckdoc=0;
+			var loopcheckblog=0;
 			var items_per_page =5;
 			var newcontent = '';
 			var page_index=0;
@@ -478,22 +480,22 @@ function search() {
 								}
 								
 								console.log("i value "+i);
-								console.log("loopcheck value "+loopcheck +"items_per_page  "+items_per_page);
+								console.log("loopcheckdis value "+loopcheckdis +"items_per_page  "+items_per_page);
 								
-								if((loopcheck>=items_per_page)&& (loopcheck%items_per_page==0))
+								if((loopcheckdis>=items_per_page)&& (loopcheckdis%items_per_page==0))
 								{
 									console.log("Inside If value ");
 									
 									i=i+1;
 									display="display:none";
 									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
-									paginate += "<li><a href='#' onclick='showPage(" + i + "," +numPages +"); return false;'>" + i + "</a></li>";
+									paginate += "<li><a href='#' onclick='showPage(" + i + ",'dis'); return false;'>" + i + "</a></li>";
 								}
 								else
 								{
 									i=i;
 								}
-								var page="page_"+i;
+								var page="page_dis_"+i;
 								console.log(page);
 								console.log(paginate);
 								
@@ -522,7 +524,7 @@ function search() {
 								discussion +='</div>';
 								//discussion +='<br>'; 
 								discussion +='</div>';
-								loopcheck=loopcheck+1
+								loopcheckdis=loopcheckdis+1
 								
                         }
 						numPages = i;
@@ -530,8 +532,23 @@ function search() {
 						if(row.type=="document"){
 						
 							var docID = (url.substring(url.lastIndexOf("-"))).substr(1);
+							if((loopcheckdoc>=items_per_page)&& (loopcheckdoc%items_per_page==0))
+								{
+									console.log("Inside If value ");
+									
+									i=i+1;
+									display="display:none";
+									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
+									paginate += "<li><a href='#' onclick='showPage(" + i + ",'doc'); return false;'>" + i + "</a></li>";
+								}
+								else
+								{
+									i=i;
+								}
+								var page="page_doc_"+i;
 							
                     		document +='<div id="div_'+docID+'" class="firstdiv"> ';
+							document +='<div class="div_'+page+'" style="'+display+'">';	
 							document +='<ul>';
                     		document +='<span class="jive-icon-med jive-icon-document"></span><li> <a href="'+url+'" target="_apps">'+subject+'</a></li>';
                     		document +='</ul>';
@@ -555,7 +572,7 @@ function search() {
                                        
                     		document +='</div>';
                     		document +='<br>';
-                      
+							loopcheckdoc=loopcheckdoc+1
                         }
 						
 					if(row.type=="post"){
