@@ -336,12 +336,15 @@ var totalPage=3;
       if(i==page)
 	  {
 		console.log("Inside show if");
-		$('#div_'+i).css('visibility', 'show');
+		//$('#div_'+i).css('visibility', 'show');
+		 $('#div_'+i+':hidden').show("fast");
+
 	  }
 	  else
 	  {
 		console.log("Inside show else");
-		$('#div_'+i).css('visibility', 'hidden');
+		/$('#div_'+i).css('visibility', 'hidden');
+		$('#div_'+i+':hidden').hide("fast");
 	  }
     }
  
