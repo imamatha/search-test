@@ -327,10 +327,23 @@ function expandBlog(blogId, blogpostId){
 	});
 
 }
-function showPage(page)
+function showPage(page,totalpage)
 {
-	$('#div_'+page).css('display', '#none');
-	console.log("Inside show page");
+ var selectedPage="#div_"+page;
+ console.log("Inside show page:::"+selectedPage);
+ for (var i = 1; i < page; i++) {
+      if(totalpage==page)
+	  {
+		$(selectedPage).css('display', 'none');
+	  }
+	  else
+	  {
+		$(selectedPage).css('display', 'block');
+	  }
+    }
+
+	
+	
 }
 // Perform a search and display the results
 function search() {
