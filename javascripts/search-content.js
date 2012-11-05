@@ -329,7 +329,7 @@ function expandBlog(blogId, blogpostId){
 }
 function showPage(page)
 {
- $(".firstdiv").hide();
+ $(".maindiv").hide();
 
 var totalPage=3;
  var selectedPage="#div_page_"+page;
