@@ -402,6 +402,7 @@ function search() {
 			var newcontent = '';
 			var page_index=0;
 			var page="";
+			var numPages = 0;
 			var display="display:block";
 			var paginate="<li>1</li>";
             $.each(rows, function(index, row) {
@@ -514,7 +515,7 @@ function search() {
 								loopcheck=loopcheck+1
 								
                         }
-               
+						numPages = i;
                
 						if(row.type=="document"){
 						
@@ -584,8 +585,7 @@ function search() {
                                   
             });
           
-			var numPages = 0;
-			numPages = i;
+			
 				
             //console.log(html);
 			all +=discussion;
