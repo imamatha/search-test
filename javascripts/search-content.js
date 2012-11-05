@@ -470,10 +470,12 @@ function search() {
 								if((loopcheck>=items_per_page)&& (loopcheck%items_per_page==0))
 								{
 									console.log("Inside If value ");
+									var numPages = 0;
+									numPages = Math.ceil(loopcheck / items_per_page);
 									i=i+1;
 									display="display:none";
 									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
-									paginate += "<li><a href='#' onclick='showPage(" + i + "); return false;'>" + i + "</a></li>";
+									paginate += "<li><a href='#' onclick='showPage(" + i + "," +numPages +"); return false;'>" + i + "</a></li>";
 								}
 								else
 								{
