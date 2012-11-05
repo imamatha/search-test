@@ -329,7 +329,7 @@ function expandBlog(blogId, blogpostId){
 }
 function showPage(page)
 {
-var totalPage=numPages;
+var totalPage=3;
  var selectedPage="#div_"+page;
  console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
  for (var i = 1; i < totalPage; i++) {
