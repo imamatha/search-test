@@ -335,8 +335,11 @@ function expandBlog(blogId, blogpostId){
 function showPage(page,type)
 {
  $(".maindiv").hide();
-var numPages="total_page_"+type;
-var totalPage="total_page_"+type;
+if(type=="discussion")
+{
+var totalPage=total_page_discussion;
+}
+
  var selectedPage=".div_page_"+type+"_"+page;
  console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
  for (var i = 1; i <=totalPage; i++) {
