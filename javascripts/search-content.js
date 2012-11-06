@@ -12,7 +12,6 @@ $("span.image-button").live('click', function () {
 		var curRowId = $(this).attr("id");
 		if(curRowId.indexOf("DOC") != -1){
 			var docID = (curRowId.substring(curRowId.lastIndexOf("-"))).substr(1);
-			//alert("found :: "+docID +" "+curRowId);
 			console.log("i'm in if section:document");
 			expandDocument(docID);
 			}
