@@ -346,15 +346,15 @@ var totalPage=total_page_discussion;
       if(i==page)
 	  {
 		console.log("Inside show if" +i);
-		$('.div_page_'+i).css('display', 'block');
+		$('.div_page_'+type+'_'+i).css('display', 'block');
 		//$(selectedPage).show();
 		$(".maindiv").show();
 	  }
 	  else
 	  {
 		console.log("Inside hide else" +i);
-		//$('#div_page_'+i).css('display', 'none');
-		 $('.div_page_'+i).hide();
+		$('.div_page_'+type+'_'+i).css('display', 'none');
+		 //$('.div_page_'+type+'_'+i).hide();
 	  }
     }
  
