@@ -109,8 +109,8 @@ text-decoration:underline;
 }
 */	
 
-#content{
-/*position:absolute;
+.content{
+position:absolute;
 border:1px solid black;
 border-color:#A0A0A0;
 top:108px;
@@ -118,19 +118,12 @@ left:50.5%;
 right:300px;
 bottom:10px;
 width:48%;
- background-color:#D8D8D8; 
+/* background-color:#D8D8D8; */
 padding:10px;
 
-display:inline;*/
-position:absolute;
-left:50%;
-        margin-top:108px;
-        margin-left:-100px;
-        width:500px;
-        height:500px;
-        background-color: red;
+display:inline;
 }
-#content ul li {
+.content ul li {
 display: inline;
 padding: .1em 2em;
 line-height:12px;

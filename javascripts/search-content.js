@@ -1,3 +1,8 @@
+
+var TOTALPAGE_DISCUSSION =0;
+var TOTALPAGE_DOCUMENT =0;
+var TOTALPAGE_BLOG =0;
+
 // On-view-load initialization
 function init() {
    
@@ -12,6 +17,7 @@ $("span.image-button").live('click', function () {
 		var curRowId = $(this).attr("id");
 		if(curRowId.indexOf("DOC") != -1){
 			var docID = (curRowId.substring(curRowId.lastIndexOf("-"))).substr(1);
+			
 			console.log("i'm in if section:document");
 			expandDocument(docID);
 			}
@@ -35,23 +41,6 @@ $("span.image-button").live('click', function () {
         $( "#tabs" ).tabs();
 		console.log("Inside Tab logic jq");
     });
-$(document).ready(function(){
-
-	 //on window scroll fire it will call a function.
-
-			$(window).scroll(function () {
-
-	 //after window scroll fire it will add define pixel added to that element.
-
-				set = $(document).scrollTop()+"px";
-
-	//this is the jQuery animate function to fixed the div position after scrolling.
-
-				$('#content').animate({top:set},{duration:500,queue:false});
-
-			});
-
-	});
 
  function monthConvert(d){
 
@@ -98,7 +87,7 @@ return outMonth;
 }
 function expandDiscussion(id){
 
-	 $("#content").html("");
+	 $(".content").html("");
 	$('.firstdiv').css('background-color', '#FFFFFF');
 	$('#div_'+id).css('background-color', '#F2F2F2');
 	
@@ -201,8 +190,8 @@ function expandDiscussion(id){
 					discussionMessage +=correctanswer;
 					discussionMessage +=helpfulanswer;
 					console.log("Html Content:: "+discussionMessage);
-					$("#content").show();
-					$("#content").html(discussionMessage);
+					$(".content").show();
+					$(".content").html(discussionMessage);
 				
 				}
 			
@@ -347,7 +336,7 @@ function showPage(page)
 {
  $(".maindiv").hide();
 
-var totalPage=100;
+var totalPage=TOTALPAGE_DISCUSSION;
  var selectedPage=".div_page_"+page;
  console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
  for (var i = 1; i <=totalPage; i++) {
@@ -426,7 +415,7 @@ function search() {
 			var newcontent = '';
 			var page_index=0;
 			var page="";
-			var numPages = 0;
+			
 			var display="display:block";
 			var paginate="<li><a href='#' onclick='showPage(1); return false;'>1</a></li>";
 			discussion +='<div  class="maindiv" >'; 
@@ -503,7 +492,7 @@ function search() {
 									i=i+1;
 									display="display:none";
 									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
-									paginate += "<li><a href='#' onclick='showPage(" + i + "," +numPages +"); return false;'>" + i + "</a></li>";
+									paginate += "<li><a href='#' onclick='showPage(" + i + "); return false;'>" + i + "</a></li>";
 								}
 								else
 								{
@@ -541,7 +530,7 @@ function search() {
 								loopcheck=loopcheck+1
 								
                         }
-						numPages = i;
+						TOTALPAGE_DISCUSSION = i;
                
 						if(row.type=="document"){
 						
