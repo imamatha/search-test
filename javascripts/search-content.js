@@ -201,8 +201,8 @@ function expandDiscussion(id){
 					discussionMessage +=correctanswer;
 					discussionMessage +=helpfulanswer;
 					console.log("Html Content:: "+discussionMessage);
-					$(".content").show();
-					$(".content").html(discussionMessage);
+					$("#content").show();
+					$("#content").html(discussionMessage);
 				
 				}
 			
