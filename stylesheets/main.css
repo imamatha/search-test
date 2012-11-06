@@ -110,7 +110,7 @@ text-decoration:underline;
 */	
 
 #content{
-position:absolute;
+/*position:absolute;
 border:1px solid black;
 border-color:#A0A0A0;
 top:108px;
@@ -118,10 +118,17 @@ left:50.5%;
 right:300px;
 bottom:10px;
 width:48%;
-/* background-color:#D8D8D8; */
+ background-color:#D8D8D8; 
 padding:10px;
 
-display:inline;
+display:inline;*/
+position:absolute;
+left:50%;
+        margin-top:200px;
+        margin-left:100px;
+        width:200px;
+        height:200px;
+        background-color: red;
 }
 #content ul li {
 display: inline;
