@@ -124,10 +124,10 @@ padding:10px;
 display:inline;*/
 position:absolute;
 left:50%;
-        margin-top:200px;
-        margin-left:100px;
-        width:200px;
-        height:200px;
+        margin-top:108px;
+        margin-left:-100px;
+        width:500px;
+        height:500px;
         background-color: red;
 }
 #content ul li {
