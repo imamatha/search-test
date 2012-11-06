@@ -1,7 +1,7 @@
 
-var TOTALPAGE_DISCUSSION =0;
-var TOTALPAGE_DOCUMENT =0;
-var TOTALPAGE_BLOG =0;
+var total_page_discussion =0;
+var total_page_document =0;
+var total_page_blog =0;
 
 // On-view-load initialization
 function init() {
@@ -332,12 +332,12 @@ function expandBlog(blogId, blogpostId){
 	});
 
 }
-function showPage(page)
+function showPage(page,type)
 {
  $(".maindiv").hide();
-
-var totalPage=TOTALPAGE_DISCUSSION;
- var selectedPage=".div_page_"+page;
+var numPages="total_page_"+type;
+var totalPage=numPages;
+ var selectedPage=".div_page_"+type+"_"+page;
  console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
  for (var i = 1; i <=totalPage; i++) {
       if(i==page)
@@ -409,8 +409,12 @@ function search() {
             var myDate="";
 			var isAnswered = 0;
 			var isQuestion = 0
-			var i=1;
-			var loopcheck=0;
+			var intial_discussion=1;
+			var intial_document=1;
+			var intial_blog=1;
+			var loop_check_discussion=0;
+			var loop_check_document=0;
+			var loop_check_blog=0;
 			var items_per_page =5;
 			var newcontent = '';
 			var page_index=0;
@@ -482,23 +486,23 @@ function search() {
 								  discussionImage +='<span class="jive-icon-med jive-icon-discussion"></span>';
 								}
 								
-								console.log("i value "+i);
-								console.log("loopcheck value "+loopcheck +"items_per_page  "+items_per_page);
+								console.log("intial_discussion value "+intial_discussion);
+								console.log("loop_check_discussion value "+loop_check_discussion +"items_per_page  "+items_per_page);
 								
-								if((loopcheck>=items_per_page)&& (loopcheck%items_per_page==0))
+								if((loop_check_discussion>=items_per_page)&& (loop_check_discussion%items_per_page==0))
 								{
 									console.log("Inside If value ");
 									
-									i=i+1;
+									intial_discussion=intial_discussion+1;
 									display="display:none";
 									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
-									paginate += "<li><a href='#' onclick='showPage(" + i + "); return false;'>" + i + "</a></li>";
+									paginate += '<li><a href="#" onclick=showPage("'+ intial_discussion + '","DISCUSSION"); return false;>' + intial_discussion + '</a></li>';
 								}
 								else
 								{
-									i=i;
+									intial_discussion=intial_discussion;
 								}
-								var page="page_"+i;
+								var page="page_discussion_"+intial_discussion;
 								console.log(page);
 								console.log(paginate);
 								
@@ -527,10 +531,10 @@ function search() {
 								discussion +='</div>';
 								//discussion +='<br>'; 
 								discussion +='</div>';
-								loopcheck=loopcheck+1
+								loop_check_discussion=loop_check_discussion+1
 								
                         }
-						TOTALPAGE_DISCUSSION = i;
+						total_page_discussion = intial_discussion;
                
 						if(row.type=="document"){
 						
