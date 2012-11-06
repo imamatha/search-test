@@ -35,6 +35,23 @@ $("span.image-button").live('click', function () {
         $( "#tabs" ).tabs();
 		console.log("Inside Tab logic jq");
     });
+$(document).ready(function(){
+
+	 //on window scroll fire it will call a function.
+
+			$(window).scroll(function () {
+
+	 //after window scroll fire it will add define pixel added to that element.
+
+				set = $(document).scrollTop()+"px";
+
+	//this is the jQuery animate function to fixed the div position after scrolling.
+
+				$('#content').animate({top:set},{duration:500,queue:false});
+
+			});
+
+	});
 
  function monthConvert(d){
 
@@ -81,7 +98,7 @@ return outMonth;
 }
 function expandDiscussion(id){
 
-	 $(".content").html("");
+	 $("#content").html("");
 	$('.firstdiv').css('background-color', '#FFFFFF');
 	$('#div_'+id).css('background-color', '#F2F2F2');
 	
