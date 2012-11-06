@@ -336,7 +336,7 @@ function showPage(page,type)
 {
  $(".maindiv").hide();
 var numPages="total_page_"+type;
-var totalPage=numPages;
+var totalPage="total_page_"+type;
  var selectedPage=".div_page_"+type+"_"+page;
  console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
  for (var i = 1; i <=totalPage; i++) {
@@ -421,7 +421,7 @@ function search() {
 			var page="";
 			
 			var display="display:block";
-			var paginate="<li><a href='#' onclick='showPage(1); return false;'>1</a></li>";
+			var paginate='<li><a href="#" onclick="showPage(1,discussion); return false;'>1</a></li>";
 			discussion +='<div  class="maindiv" >'; 
             $.each(rows, function(index, row) {
             	url=row.resources.html.ref;
