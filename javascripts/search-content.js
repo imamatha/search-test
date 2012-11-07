@@ -556,7 +556,7 @@ function search() {
 									intial_document=intial_document+1;
 									display_document="display:none";
 									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
-									paginate_document += '<li><a href="#" onclick=showPage("'+ intial_document + '","document"); return false;>' + intial_discussion + '</a></li>';
+									paginate_document += '<li><a href="#" onclick=showPage("'+ intial_document + '","document"); return false;>' + intial_document + '</a></li>';
 								}
 								else
 								{
@@ -639,14 +639,13 @@ function search() {
 			//all +="<br>"+document;
 			//all +="<br>"+post;
 			
-			console.log("no Of pages::"+total_page_discussion)
-			
-			
 			console.log("discussion::"+discussion);
 			//$("#tabs-1").html(all);
 			discussion +='<div class="pagingControls">Page: <ul>'+paginate_discussion+'<ul></div>';
-			document +='<div class="pagingControls">Page: <ul>'+paginate_document+'<ul></div>';
+			
 			$("#tabs-1").html(discussion);
+			document +='<div class="pagingControls">Page: <ul>'+paginate_document+'<ul></div>';
+			console.log("document::"+document);
 			$("#tabs-2").html(document);
 			$("#tabs-3").html(post);
             $("#search-info").show();
