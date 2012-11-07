@@ -334,7 +334,7 @@ function expandBlog(blogId, blogpostId){
 }
 function showPage(page,type)
 {
- $(".maindiv").hide();
+ //$(".maindiv").hide();
 if(type=="discussion")
 {
 var totalPage=total_page_discussion;
@@ -348,7 +348,7 @@ var totalPage=total_page_discussion;
 		console.log("Inside show if" +i);
 		$('.div_page_'+type+'_'+i).css('display', 'block');
 		//$(selectedPage).show();
-		$(".maindiv").show();
+		//$(".maindiv").show();
 	  }
 	  else
 	  {
@@ -418,14 +418,17 @@ function search() {
 			var loop_check_discussion=0;
 			var loop_check_document=0;
 			var loop_check_blog=0;
-			var items_per_page =5;
+			var items_per_page =3;
 			var newcontent = '';
 			var page_index=0;
 			var page="";
 			var discussion_name="discussion";
-			var display="display:block";
-			var paginate='<li><a href="#" onclick="showPage(1,\'discussion\'); return false;">1</a></li>';
-			discussion +='<div  class="maindiv" >'; 
+			var display_discussion="display:block";
+			var display_document="display:block";
+			var display_blog="display:block";
+			var paginate_discussion='<li><a href="#" onclick="showPage(1,\'discussion\'); return false;">1</a></li>';
+			var paginate_document='<li><a href="#" onclick="showPage(1,\'document\'); return false;">1</a></li>';
+			 
             $.each(rows, function(index, row) {
             	url=row.resources.html.ref;
 				subject=row.subject;
@@ -497,9 +500,9 @@ function search() {
 									console.log("Inside If value ");
 									
 									intial_discussion=intial_discussion+1;
-									display="display:none";
+									display_discussion="display:none";
 									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
-									paginate += '<li><a href="#" onclick=showPage("'+ intial_discussion + '","discussion"); return false;>' + intial_discussion + '</a></li>';
+									paginate_discussion += '<li><a href="#" onclick=showPage("'+ intial_discussion + '","discussion"); return false;>' + intial_discussion + '</a></li>';
 								}
 								else
 								{
@@ -507,10 +510,10 @@ function search() {
 								}
 								var page="page_discussion_"+intial_discussion;
 								console.log(page);
-								console.log(paginate);
+								console.log(paginate_discussion);
 								
 								discussion +='<div id="div_'+discussionID+'" class="firstdiv" >'; 
-								discussion +='<div class="div_'+page+'" style="'+display+'">';								
+								discussion +='<div class="div_'+page+'" style="'+display_discussion+'">';								
 								discussion +='<ul>';			
 								discussion +=discussionImage+'<li><a href="'+url+'" target="_apps">'+subject+'</a></li>';			
 								discussion +='</ul>'; 
@@ -543,7 +546,27 @@ function search() {
 						
 							var docID = (url.substring(url.lastIndexOf("-"))).substr(1);
 							
+							console.log("intial_document value "+intial_document);
+								console.log("loop_check_discussion value "+loop_check_document +"items_per_page  "+items_per_page);
+								
+								if((loop_check_document>=items_per_page)&& (loop_check_document%items_per_page==0))
+								{
+									console.log("Inside If value ");
+									
+									intial_document=intial_document+1;
+									display_document="display:none";
+									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
+									paginate_document += '<li><a href="#" onclick=showPage("'+ intial_document + '","document"); return false;>' + intial_discussion + '</a></li>';
+								}
+								else
+								{
+									intial_document=intial_document;
+								}
+								var page="page_document_"+intial_document;
+								console.log(page);
+								console.log(paginate_discussion);
                     		document +='<div id="div_'+docID+'" class="firstdiv"> ';
+							document +='<div class="div_'+page+'" style="'+display_document+'">';	
 							document +='<ul>';
                     		document +='<span class="jive-icon-med jive-icon-document"></span><li> <a href="'+url+'" target="_apps">'+subject+'</a></li>';
                     		document +='</ul>';
@@ -566,10 +589,11 @@ function search() {
 							document +='</div>';
                                        
                     		document +='</div>';
+							document +='</div>';
                     		document +='<br>';
                       
                         }
-						
+						total_page_document = intial_document;
 					if(row.type=="post"){
 					
 							var postDetailsId=row.resources.self.ref;
@@ -619,7 +643,8 @@ function search() {
 			
 			console.log("discussion::"+discussion);
 			//$("#tabs-1").html(all);
-			discussion +='<div class="pagingControls">Page: <ul>'+paginate+'<ul></div></div>';
+			discussion +='<div class="pagingControls">Page: <ul>'+paginate_discussion+'<ul></div>';
+			document +='<div class="pagingControls">Page: <ul>'+paginate_document+'<ul></div>';
 			$("#tabs-1").html(discussion);
 			$("#tabs-2").html(document);
 			$("#tabs-3").html(post);
