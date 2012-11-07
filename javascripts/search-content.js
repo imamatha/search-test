@@ -547,7 +547,7 @@ function search() {
 							var docID = (url.substring(url.lastIndexOf("-"))).substr(1);
 							
 							console.log("intial_document value "+intial_document);
-								console.log("loop_check_discussion value "+loop_check_document +"items_per_page  "+items_per_page);
+								console.log("loop_check_document value "+loop_check_document +"items_per_page  "+items_per_page);
 								
 								if((loop_check_document>=items_per_page)&& (loop_check_document%items_per_page==0))
 								{
@@ -564,7 +564,7 @@ function search() {
 								}
 								var page="page_document_"+intial_document;
 								console.log(page);
-								console.log(paginate_discussion);
+								console.log(paginate_document);
                     		document +='<div id="div_'+docID+'" class="firstdiv"> ';
 							document +='<div class="div_'+page+'" style="'+display_document+'">';	
 							document +='<ul>';
