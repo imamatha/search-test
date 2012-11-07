@@ -590,7 +590,7 @@ function search() {
                                        
                     		document +='</div>';
 							document +='</div>';
-                    		document +='<br>';
+                    		//document +='<br>';
 							loop_check_document=loop_check_document+1
                       
                         }
