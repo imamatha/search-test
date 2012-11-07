@@ -591,6 +591,7 @@ function search() {
                     		document +='</div>';
 							document +='</div>';
                     		document +='<br>';
+							loop_check_document=loop_check_document+1
                       
                         }
 						total_page_document = intial_document;
