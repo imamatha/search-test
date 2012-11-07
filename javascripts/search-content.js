@@ -339,6 +339,10 @@ if(type=="discussion")
 {
 var totalPage=total_page_discussion;
 }
+else if(type=="document")
+{
+var totalPage=total_page_document;
+}
 
  var selectedPage=".div_page_"+type+"_"+page;
  console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
