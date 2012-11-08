@@ -93,6 +93,7 @@ border: 1px solid black;
        width:50%;
        bottom:2px;
        padding:10px;
+       overflow:scroll;
       -webkit-border-radius:25px;
       -moz-border-radius: 25px;
       border-radius:25px;     

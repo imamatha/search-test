@@ -41,6 +41,7 @@ $("span.image-button").live('click', function () {
 
         $( "#tabs" ).tabs();		
         $('.withborder').scrollbars();
+        $('.content').scrollbars();
 
 }); 
 
