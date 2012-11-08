@@ -96,10 +96,13 @@ border: 1px solid black;
       -webkit-border-radius:25px;
       -moz-border-radius: 25px;
        border-radius:25px;     
-       overflow:scroll;
-        overflow: auto;
 
-        position:static;
+        height:100px;
+       overflow-y: scroll;
+    overflow-x: auto;
+    display:block;
+ 
+
 }
 
 /* Border for content*/
