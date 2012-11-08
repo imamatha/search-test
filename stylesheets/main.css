@@ -81,20 +81,22 @@
 /* Border for search-result*/
 .withborder {
   
-       border:0;
+       border:0px;
+       border-color: rgb(160,160,160);
+       line-height:1;
        border-color:#A0A0A0;
        top:5px;
        left:1px;
        width:50%;
        bottom:2px;
-       padding:10px;     
+       padding:1px;     
       -webkit-border-radius:25px;
       -moz-border-radius: 25px;
        border-radius:25px;     
        /*overflow-y: scroll;
        overflow-x: hidden;*/
        overflow:auto;
-height:300PX;
+      height:300PX;
 
 }
 
