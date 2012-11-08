@@ -1,7 +1,7 @@
 .search-results ul li {
-     display: inline;
-     padding: 0 0;
-     line-height:10px;
+        display: inline;
+       line-height: 10px;
+       padding: 0.1em 0.5em;
 }
   
 .search-results ul {padding: 0 0;}
@@ -77,10 +77,10 @@
 .pagingControls ul{display:inline;padding-left:0.5em}
 .pagingControls li{display:inline;padding:0 0.5em}
 .pagingControls a {
-    text-decoration: none;
-border: solid 1px #AAE;
-color: #15B;
-border: 1px solid black;
+     text-decoration: none;
+     border: solid 1px #AAE;
+     color: #15B;
+     border: 1px solid black;
 }
 
 /* Border for search-result*/
