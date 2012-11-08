@@ -490,9 +490,9 @@ function search() {
 								discussion +='<div class="div_'+page+'" style="'+display_discussion+'">';								
 								  discussion +='<ul>';			
 				                discussion +=discussionImage+'<li><a href="'+url+'" target="_apps">'+subject+'</a></li>';			
-                               discussion +='</ul>';
+                                discussion +='</ul>';
                                 discussion +='<ul>';
-				                discussion +='<span class="jive-icon-med image-button" id="'+discussionID+'"></span>';
+				                discussion +='<span class="jive-icon-med image-button align" id="'+discussionID+'"></span>';
                     		    discussion +='</ul>'; 
 					
 				             discussion +='<div class="root1">';  
