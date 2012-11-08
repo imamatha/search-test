@@ -241,17 +241,16 @@ function expandDocument(id){
 				if(isBinaryDoc !=0)
 				{       
 					myDate=response.data.creationDate.substr(0,10);                  
-					myDate=myDate.split("-"); 
-					dateM=myDate[1];
+			                myDate=myDate.split("-"); 
+			                dateM=myDate[1];
 					var finalMonth=monthConvert(dateM);
 					var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 
 					documentdata += '<div class="rootborder">';
-					documentdata += '<span class="document"><a target="_app" href="'+response.data.resources.html.ref+'">';						
+					documentdata += '<span class="root-header"><a href="'+response.data.resources.html.ref+'" target="_app">';						
 					documentdata += response.data.subject+'</a></span>';
-					documentdata +='<div> by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+response.data.author.username+'>'+response.data.author.name+'</a> on '+newDate+'</div></div>';
-					
-					documentdata += '<div class="answerborder root">'+response.data.content.binary.description;
-					//documentdata +='<div class="answerborder">';					
+					documentdata +='<div class="content-date"> by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+response.data.author.username+'>'+response.data.author.name+'</a> on '+newDate+'</div></div>';				
+					documentdata += '<div class="answerborder">';
+					documentdata +='<span class="root">'+response.data.content.binary.description+'</span>';
 					documentdata += '<span class="subtext">This document contains an uploaded document (PDF/DOC). ';
 					documentdata += 'Please click <a target="_app" href="'+response.data.resources.html.ref+'">here</a> to open the document</span></div>';
 					documentdata +='</div>';
