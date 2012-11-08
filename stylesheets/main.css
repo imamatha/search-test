@@ -82,7 +82,7 @@
 }
 
 /* Border for content*/
-#content{
+.content{
      position:fixed;
      border:1px solid black;
      border-color:#A0A0A0;
@@ -99,7 +99,7 @@
      
 }
 
-#content ul li {
+.content ul li {
      display: inline;
      padding: .1em 2em;
      line-height:12px;
