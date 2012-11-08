@@ -96,8 +96,9 @@ border: 1px solid black;
       -webkit-border-radius:25px;
       -moz-border-radius: 25px;
        border-radius:25px;     ;
-       overflow-y: scroll;
-       overflow-x: hidden;
+      /* overflow-y: scroll;
+       overflow-x: hidden;*/
+overflow:auto;
   
 
  
@@ -119,8 +120,9 @@ border: 1px solid black;
      -webkit-border-radius:25px;
      -moz-border-radius: 25px;
      border-radius:25px;
-     overflow-y:scroll;
-     overflow-X:hidden;
+     /*overflow-y:scroll;
+     overflow-X:hidden;*/
+overflow:auto;
      
 }
 
