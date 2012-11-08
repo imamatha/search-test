@@ -132,31 +132,32 @@ border: 1px solid black;
      font-style:normal;
      font-size:12px;
 }
+
 /* border for root content*/
 .rootborder{
       margin: 5px;
-      padding: 5px;
+      padding: 10px;
       border: solid 1px #E5E5FF;
       background:#CCCCCC;
       font-size:90%;
       color: black
       padding: 0 0;
--webkit-border-radius:25px;
+     -webkit-border-radius:25px;
      -moz-border-radius: 25px;
-     border-radius:25px;
+      border-radius:25px;
 }
 
 /* border for subcontent under root content*/
 .answerborder{
       margin: 5px;
-      padding: 5px;
+      padding: 10px;
       border: solid 1px #E5E5FF;
       background: #EEEEEE;
       font-size:90%;
       color: black;
       -webkit-border-radius:25px;
-     -moz-border-radius: 25px;
-     border-radius:25px;
+       -moz-border-radius: 25px;
+       border-radius:25px;
 }
 
 /*Date format,anchor styling in content border*/
