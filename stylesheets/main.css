@@ -98,6 +98,7 @@ border: 1px solid black;
        border-radius:25px;     
        line-height:1;
        overflow:scroll;
+        position:fixed;
 }
 
 /* Border for content*/
