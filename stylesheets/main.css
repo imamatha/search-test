@@ -86,7 +86,7 @@ border: 1px solid black;
 /* Border for search-result*/
 .withborder {
       
-       border:0px;  
+       border:1px solid black;
        top:5px;
        left:1px;
        width:50%;
