@@ -87,7 +87,7 @@ $("span.image-button").live('mouseover', function () {
 //function for expand button to display the discussions with correct and helpful answers
 function expandDiscussion(id){
         
-	$("#content").html("");
+	$(".content").html("");
 	$('.firstdiv').css('background-color', '#FFFFFF');
 	$('#div_'+id).css('background-color', '#F2F2F2');
 	console.log("Expand Row Id::: "+ id);
@@ -162,8 +162,8 @@ function expandDiscussion(id){
 					discussionMessage +=correctanswer;
 					discussionMessage +=helpfulanswer;
 					console.log("Html Content:: "+discussionMessage);
-					$("#content").show();
-					$("#content").html(discussionMessage);
+					$(".content").show();
+					$(".content").html(discussionMessage);
 				
 				   }
 			
@@ -178,7 +178,7 @@ function expandDiscussion(id){
 
 //function for expand button to display the documents
 function expandDocument(id){
-	$("#content").html("");
+	$(".content").html("");
 	$('.firstdiv').css('background-color', '#FFFFFF');
 	$('#div_'+id).css('background-color', '#F2F2F2');
        //  $('#div_'+id).css({"background-color":"#F2F2F2","background-repeat": "no-repeat"});
@@ -240,8 +240,8 @@ function expandDocument(id){
                                         
 				  }
 			    }
-			    $("#content").show();
-			    $("#content").html(documentdata);
+			    $(".content").show();
+			    $(".content").html(documentdata);
 		  });
 }
 
@@ -250,7 +250,7 @@ function expandBlog(blogId, blogpostId){
 	var postId=blogpostId;
 	var finalpostId=postId.substr(0,postId.indexOf('/'))
 	console.log("Inside Blog expand and post id is"+finalpostId);
-	$("#content").html("");
+	$(".content").html("");
 	$('.firstdiv').css('background-color', '#FFFFFF');
 	$('#div_'+finalpostId).css('background-color', '#F2F2F2');
 	console.log("Inside Blog expand");
@@ -286,8 +286,8 @@ function expandBlog(blogId, blogpostId){
 					  blogdata +='<div class="answerborder">';
 					  blogdata +='<span class="root">'+response.data.content.text +'</span></div>';	
 					}
-					  $("#content").show();
-					  $("#content").html(blogdata);
+					  $(".content").show();
+					  $(".content").html(blogdata);
 				   });
 
 
