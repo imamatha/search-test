@@ -509,8 +509,7 @@ function search() {
                     	        discussion +='</ul>';
 								discussion +='</div>';				                
 								discussion +='</div>';
-							
-                       
+								discussion +='</div>';
 								loop_check_discussion=loop_check_discussion+1
 								
                         }
