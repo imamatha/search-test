@@ -97,6 +97,8 @@ border: 1px solid black;
       -moz-border-radius: 25px;
        border-radius:25px;     
        overflow:scroll;
+        overflow: auto;
+
         position:static;
 }
 
