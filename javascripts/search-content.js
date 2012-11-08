@@ -5,23 +5,20 @@ var total_page_blog =0;
 
 // On-view-load initialization
 function init() {
-   
-    $("#search").click(search);
-	//$(".image-button").click(expand);
-    gadgets.window.adjustHeight();
-   
+      $("#search").click(search);
+      gadgets.window.adjustHeight();
 }
-$("span.image-button").live('click', function () {
-		
-		
-		var curRowId = $(this).attr("id");
-		if(curRowId.indexOf("DOC") != -1){
-			var docID = (curRowId.substring(curRowId.lastIndexOf("-"))).substr(1);
-			
-			console.log("i'm in if section:document");
-			expandDocument(docID);
-			}
-		else if(curRowId.indexOf("post") != -1){
+
+
+//onhover event of expand icon
+$("span.image-button").live('mouseover', function () {
+                var curRowId = $(this).attr("id");
+	        if(curRowId.indexOf("DOC") != -1){
+	           var docID = (curRowId.substring(curRowId.lastIndexOf("-"))).substr(1);
+	           console.log("i'm in if section:document");
+	           expandDocument(docID);
+	        }
+	        else if(curRowId.indexOf("post") != -1){
 			var blogpostId = (curRowId.substring(curRowId.lastIndexOf("-"))).substr(1);
 			console.log("i'm in if section:blogID::"+blogpostId);
 			var finalBlogId=(blogpostId.substring(blogpostId.lastIndexOf("/"))).substr(1);
@@ -34,75 +31,65 @@ $("span.image-button").live('click', function () {
 			expandDiscussion(curRowId);
 		}
 
-	
-    });
-	
+ });
+    
+ //function for tabs   
  $(function() {
+         $( "#tabs" ).tabs();
+        
+ });
 
-        $( "#tabs" ).tabs();		
-        $('.withborder').scrollbars();
-        $('.content').scrollbars();
-
-}); 
-
+//function for date format
  function monthConvert(d){
 
   var outMonth="";
     switch (d) {
-		case '01':
-			outMonth= "Jan";
-			break;
-		case '02':
-			outMonth= "Feb";
-			break;
-		case '03':
-			outMonth= "Mar";
-			break;
-		case '04':
-			outMonth= "Apr";
-			break;
-		case '05':
-			outMonth= "May";
-			break;
-		case '06':
-			outMonth= "Jun";
-			break;
-		case '07':
-			outMonth= "Jul";
-			break;
-		case '08':
-			outMonth= "Aug";
-			break;
-		case '09':
-			outMonth= "Sep";
-			break;
-		case '10':
-			outMonth= "Oct";
-			break;
-		case '11':
-			outMonth= "Nov";
-			break;
-		case '12':
-			outMonth= "Dec";
-			break;
-	}
-return outMonth;
+	    case '01':
+	    outMonth= "Jan";
+	    break;
+	    case '02':
+	    outMonth= "Feb";
+	    break;
+	    case '03':
+	    outMonth= "Mar";
+	    break;
+	    case '04':
+	    outMonth= "Apr";
+	    break;
+	    case '05':
+	    outMonth= "May";
+	    break;
+	    case '06':
+	    outMonth= "Jun";
+	    break;
+	    case '07':
+	    outMonth= "Jul";
+	    break;
+	    case '08':
+	    outMonth= "Aug";
+	    break;
+	    case '09':
+	    outMonth= "Sep";
+	    break;
+	    case '10':
+	    outMonth= "Oct";
+	    break;
+	    case '11':
+	    outMonth= "Nov";
+	    break;
+	    case '12':
+	    outMonth= "Dec";
+	    break;
+    }
+ return outMonth;
 }
+       
+//function for expand button to display the discussions with correct and helpful answers
 function expandDiscussion(id){
-
-	 $(".content").html("");
+        
+	$("#content").html("");
 	$('.firstdiv').css('background-color', '#FFFFFF');
 	$('#div_'+id).css('background-color', '#F2F2F2');
-	
-	/*var cssObj = {
-      'background-image' : 'url(../images/jive-icon-sprites-med.png)',
-       'margin':' -1px 5px 0 0',
-       'height' :'18px',
-	   'width' :'19px',
-	   'background-position':' -176px -1360px'
-    }
-
-	$('#'+id).css(cssObj );*/
 	console.log("Expand Row Id::: "+ id);
 	var discussionMessage="";
 	var correctanswer="";
@@ -112,37 +99,33 @@ function expandDiscussion(id){
 	
 	var request = osapi.jive.core.discussions.get({id: id});
 	request.execute(function(response) { 
-		console.log("Expanding discussion response is " + JSON.stringify(response.data));
-		var discussionresult=response.data;
+	         console.log("Expanding discussion response is " + JSON.stringify(response.data));
+	         var discussionresult=response.data;
 		
 		if (response.error) {
 			console.log("Error in get: "+response.error.message);
 		}
+		    
 		else{
-			
 			myDate=response.data.creationDate.substr(0,10);                  
 			myDate=myDate.split("-"); 
 			dateM=myDate[1];
 			var finalMonth=monthConvert(dateM);
 			var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 
 		        console.log("I'm inside Root Message Div");
-						rootmessage +='<div class="rootborder">';
-						//rootmessage +='<ul>';
-						rootmessage +='<div ><a href="'+discussionresult.messages.root.resources.html.ref+'" target="_apps">'+discussionresult.messages.root.subject+'</a></div>';
-						rootmessage +='<div> by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+response.data.author.username+'>'+response.data.author.name+'</a> on '+newDate+'</div>';	
-						rootmessage +='<span class="root">'+discussionresult.messages.root.content.text+'</span>';                             
-						//rootmessage +=+discussionresult.messages.root.content.text+;                 
+		        rootmessage +='<div class="rootborder">';
+			rootmessage +='<div class="root-header"><a href="'+discussionresult.messages.root.resources.html.ref+'" target="_apps">'+discussionresult.messages.root.subject+'</a></div>';
+			rootmessage +='<div class="content-date"> by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+response.data.author.username+'>'+response.data.author.name+'</a> on '+newDate+'</div>';	
+			rootmessage +='<span class="root">'+discussionresult.messages.root.content.text+'</span>';                                        
                         rootmessage +='</div>';				
-						//rootmessage +='</ul>';
-						rootmessage +='</div>';
-			
-			
-			var request = response.data.messages.get( ) ;
+			rootmessage +='</div>';
+		
+			var request = response.data.messages.get();
 			request.execute(function(response) {
 			var result = response.data;
 				if(!response.error) {
 					
-					 $.each(result, function(index, row) {
+				    $.each(result, function(index, row) {
 							console.log("Expanding discussion container response is " + JSON.stringify(response.data));
 							var count=0;
 							if(row.answer){
@@ -152,95 +135,80 @@ function expandDiscussion(id){
 									var finalMonth=monthConvert(dateM);
 									var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 
 									console.log("I'm inside expand if");
-									correctanswer +='<div class="answerborder">';
-									//correctanswer +='<ul>';
-									correctanswer +='<div class="correct">Correct Answer</div> ';
-									//correctanswer +='<div>by&nbsp;';
-									//correctanswer +='<a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a>';
-									//correctanswer +='on&nbsp;'+newDate+'</div>';
-									correctanswer +='<div> by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a> on '+newDate+'</div>';
-									correctanswer +='<div class="root">'+row.content.text+ '</div	>';
-									//correctanswer +='</ul>';
+									correctanswer +='<div class="answerborder">';								
+									correctanswer +='<div class="correct">Correct Answer</div> ';									
+									correctanswer +='<div class="content-date"> by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a> on '+newDate+'</div>';									
+									correctanswer +='<span class="root">'+row.content.text+ '</span>';								
 									correctanswer +='</div>';
-									
-									
-								}
-							if(row.helpful){
+							
+							  }
+							  if(row.helpful){
 									myDate=row.creationDate.substr(0,10);                  
 									myDate=myDate.split("-"); 
 									dateM=myDate[1];
 									var finalMonth=monthConvert(dateM);
 									var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 
 									console.log("I'm inside expand if");
-									helpfulanswer +='<div class="answerborder">';
-								//	helpfulanswer +='<ul>';
-									helpfulanswer +='<div class="helpful">Helpful Answer </div>';
-									//helfulanswer +='<div>by &nbsp;';
-									//helfulanswer +='<a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a>';
-									helpfulanswer +='<div> by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a> on '+newDate+'</div>';
-									//helpfulanswer +='&nbsp;on&nbsp; '+ newDate + '</div>';
-									helpfulanswer +='<div class="root">'+row.content.text+ '</div>';
-									//helpfulanswer +='</ul>';
+									helpfulanswer +='<div class="answerborder">';							
+									helpfulanswer +='<div class="helpful">Helpful Answer </div>';								
+									helpfulanswer +='<div class="content-date"> by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+row.author.username+'>'+row.author.name+'</a> on '+newDate+'</div>';									
+									helpfulanswer +='<span class="root">'+row.content.text+ '</span>';								
 									helpfulanswer +='</div>';
-									
-									
-								}
-																
-								
+							
+							  }
 					
-					});
+					   });
 					discussionMessage +=rootmessage;
 					discussionMessage +=correctanswer;
 					discussionMessage +=helpfulanswer;
 					console.log("Html Content:: "+discussionMessage);
-					$(".content").show();
-					$(".content").html(discussionMessage);
+					$("#content").show();
+					$("#content").html(discussionMessage);
 				
-				}
-			
+				   }
 			
 			});
 		
 		}
-	
-	
+
 	});
-	
-	
 
 }
 
+
+//function for expand button to display the documents
 function expandDocument(id){
-	$(".content").html("");
+	$("#content").html("");
 	$('.firstdiv').css('background-color', '#FFFFFF');
 	$('#div_'+id).css('background-color', '#F2F2F2');
+       //  $('#div_'+id).css({"background-color":"#F2F2F2","background-repeat": "no-repeat"});
 		console.log("You are in document section id ::"+id);
 		var request = osapi.jive.core.documents.get({id: id});
 		var documentdata="";
 		request.execute(function(response) { 
-		console.log("Expanding document response is " + JSON.stringify(response.data));
-		var discussionresult=response.data;
-		var isBinaryDoc=0;
-		var myDate="";
-		try {
+		               console.log("Expanding document response is " + JSON.stringify(response.data));
+		               var discussionresult=response.data;
+		               var isBinaryDoc=0;
+		               var myDate="";
+		    try {
 			if (response.data.content.binary.ref) {
 				isBinaryDoc = 1;
-			}
+	                }
 			else {
 				isBinaryDoc = 0;
 			}	
-		}
-		catch (err) {
+		    }
+		    catch (err) {
 			isBinaryDoc = 0;
-		}
+		    }
 		
-			if (response.error) {
+		        if (response.error) {
 				console.log("Error in get: "+response.error.message);
 			}
 			else{
 				if(isBinaryDoc !=0)
-				{       
-					myDate=response.data.creationDate.substr(0,10);                  
+				  {       
+				        myDate=response.data.creationDate.substr(0,10);                  
 			                myDate=myDate.split("-"); 
 			                dateM=myDate[1];
 					var finalMonth=monthConvert(dateM);
@@ -254,34 +222,35 @@ function expandDocument(id){
 					documentdata += '<span class="subtext">This document contains an uploaded document (PDF/DOC). ';
 					documentdata += 'Please click <a target="_app" href="'+response.data.resources.html.ref+'">here</a> to open the document</span></div>';
 					documentdata +='</div>';
-				}
-				else
-				{
+				  }
+				  else
+				  {
 					myDate=response.data.creationDate.substr(0,10);                  
-					myDate=myDate.split("-"); 
-					dateM=myDate[1];
-					var finalMonth=monthConvert(dateM);
+			                myDate=myDate.split("-"); 
+			                dateM=myDate[1];
+				        var finalMonth=monthConvert(dateM);
 					var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 
 					documentdata +='<div class="rootborder">';					
-					documentdata +='<span class="document"><a target="_app" href="'+response.data.resources.html.ref+'">';
+					documentdata +='<span class="root-header"><a target="_app" href="'+response.data.resources.html.ref+'">';
 					documentdata += response.data.subject+'</a></span>';
-					documentdata +='<div> by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+response.data.author.username+'>'+response.data.author.name+'</a> on '+newDate+'</div>';
-					documentdata +='</div>';
-					
+					documentdata +='<div class="content-date"> by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+response.data.author.username+'>'+response.data.author.name+'</a> on '+newDate+'</div>';
+					documentdata +='</div>';					
 					documentdata +='<div class="answerborder">';
 					documentdata +='<span class="root">'+response.data.content.text +'</span></div>';				
                                         
-				}
-			}
-			$(".content").show();
-			$(".content").html(documentdata);
-		});
+				  }
+			    }
+			    $("#content").show();
+			    $("#content").html(documentdata);
+		  });
 }
+
+//function for expand button to display the blog
 function expandBlog(blogId, blogpostId){
 	var postId=blogpostId;
 	var finalpostId=postId.substr(0,postId.indexOf('/'))
 	console.log("Inside Blog expand and post id is"+finalpostId);
-	$(".content").html("");
+	$("#content").html("");
 	$('.firstdiv').css('background-color', '#FFFFFF');
 	$('#div_'+finalpostId).css('background-color', '#F2F2F2');
 	console.log("Inside Blog expand");
@@ -293,40 +262,39 @@ function expandBlog(blogId, blogpostId){
 			request.execute(function(response) {
 				console.log("Posts in blog"+JSON.stringify(response.data));
 				var result = response.data;
-					if(!response.error) {
-						$.each(result, function(index, row) {
-							if(finalpostId.indexOf(row.id) != -1)
-							{
-							var postresult=row.get();
-							postresult.execute(function(response) {
-							console.log("Post Post is"+JSON.stringify(response.data));
-							if (response.error) {
-							console.log("Error in get: "+response.error.message);
-							}
-							else{
-								myDate=response.data.creationDate.substr(0,10);                  
-								myDate=myDate.split("-"); 
-								dateM=myDate[1];
-								var finalMonth=monthConvert(dateM);
-								var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 
-								blogdata +='<div class="rootborder">';
-								blogdata +='<span class="document"><a target="_app" href="'+response.data.resources.html.ref+'">';
-								blogdata += response.data.subject+'</a></span>';
-								blogdata +='<div> by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+response.data.author.username+'>'+response.data.author.name+'</a> on '+newDate+'</div>';
-								blogdata +='</div>';
-								
-								blogdata +='<div class="answerborder">';
-								blogdata +='<span class="root">'+response.data.content.text +'</span></div>';	
-							}
-							$(".content").show();
-							$(".content").html(blogdata);
-						});
-
-
+				if(!response.error) {
+				   $.each(result, function(index, row) {
+			           if(finalpostId.indexOf(row.id) != -1)
+				     {
+				       var postresult=row.get();
+				       postresult.execute(function(response) {
+				       console.log("Post Post is"+JSON.stringify(response.data));
+				       if (response.error) {
+					   console.log("Error in get: "+response.error.message);
+				        }
+				      else{
+				          myDate=response.data.creationDate.substr(0,10);                  
+                                          myDate=myDate.split("-"); 
+                                          dateM=myDate[1];
+			                  var finalMonth=monthConvert(dateM);
+				          var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 			    
+					  blogdata +='<div class="rootborder">';
+				          blogdata +='<span class="root-header"><a target="_app" href="'+response.data.resources.html.ref+'">';
+					  blogdata += response.data.subject+'</a></span>';
+					  blogdata +='<div class="content-date"> by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+response.data.author.username+'>'+response.data.author.name+'</a> on '+newDate+'</div>';
+					  blogdata +='</div>';							
+					  blogdata +='<div class="answerborder">';
+					  blogdata +='<span class="root">'+response.data.content.text +'</span></div>';	
 					}
+					  $("#content").show();
+					  $("#content").html(blogdata);
+				   });
 
 
-				});
+			        }
+
+
+			    });
 
 			}
 
