@@ -22,11 +22,6 @@
      text-decoration:underline;
 }
 
-.maindiv
-{
-    display: block;
-}
-
 /* Image positions*/
 .jive-icon-med {
      background-image: url('../images/jive-icon-sprites-med.png');
