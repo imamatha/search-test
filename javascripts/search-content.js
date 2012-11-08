@@ -38,9 +38,11 @@ $("span.image-button").live('click', function () {
     });
 	
  $(function() {
-        $( "#tabs" ).tabs();
-		console.log("Inside Tab logic jq");
-    });
+
+        $( "#tabs" ).tabs();		
+        $('.withborder').scrollbars();
+
+}); 
 
  function monthConvert(d){
 
