@@ -95,7 +95,8 @@
        border-radius:25px;     
        /*overflow-y: scroll;
        overflow-x: hidden;*/
-       overflow:auto;
+       overflow-y:auto;
+	   height:300px;
     
 
 }
