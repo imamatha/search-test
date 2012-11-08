@@ -1,7 +1,7 @@
 .search-results ul li {
         display: inline;
        line-height: 10px;
-       padding: 0.1em 0.5em;
+       padding: 0 0;
 }
   
 .search-results ul {padding: 0 0;}
