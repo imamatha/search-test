@@ -402,6 +402,7 @@ function search() {
 			var display_blog="display:block";
 			var paginate_discussion='<li><a href="#" onclick="showPage(1,\'discussion\'); return false;">1</a></li>';
 			var paginate_document='<li><a href="#" onclick="showPage(1,\'document\'); return false;">1</a></li>';
+			var paginate_blog='<li>a href="#" onclick="showPage(1,\'document\'); return false;">1</a></li>';
 			 
             $.each(rows, function(index, row) {
             	url=row.resources.html.ref;
@@ -574,8 +575,23 @@ function search() {
 							var blogSummaryId=row.blogSummary.resources.self.ref;
 							var blogId = (blogSummaryId.substring(blogSummaryId.lastIndexOf("/"))).substr(1);
 							var postId = (postDetailsId.substring(postDetailsId.lastIndexOf("/"))).substr(1);
+							if((loop_check_blog>=items_per_page)&& (loop_check_blog%items_per_page==0))
+								{
+									console.log("Inside If value ");
+									
+									intial_blog=intial_blog+1;
+									display_blog="display:none";
+									//paginate +="<li><a href='#' onclick='showPage(i); return false;'>"+i+"</li>";	
+									paginate_blog += '<li><a href="#" onclick=showPage("'+ intial_blog + '","blog"); return false;>' + intial_blog + '</a></li>';
+								}
+								else
+								{
+									intial_blog=intial_blog;
+								}
+								var page="page_blog_"+intial_blog;
 							
 							post +='<div id="div_'+postId+'" class="firstdiv"> ';
+								post +='<div class="div_'+page+'" style="'+display_blog+'">';	
 							post +='<ul>';
 							post +='<span class="jive-icon-med jive-icon-blog"></span><li class="post" ><a href="'+url+'" target="_apps">'+subject+'</a></li>';
 							post +='</ul>';
@@ -598,7 +614,8 @@ function search() {
 							post +='</div>'; 
                                     
 							post +='</div>';  
-							post +='<br>';							
+							post +='<br>';		
+							loop_check_blog=loop_check_blog+1							
 							             
 					}
 					
@@ -617,9 +634,10 @@ function search() {
 			discussion +='<div class="pagingControls">Page:'+paginate_discussion+'</div>';
 			
 			$("#tabs-1").html(discussion);
-			document +='<div class="pagingControls">Page: <ul>'+paginate_document+'<ul></div>';
+			document +='<div class="pagingControls">Page:'+paginate_document+'</div>';
 			console.log("document::"+document);
 			$("#tabs-2").html(document);
+			blog +='<div class="pagingControls">Page:'+paginate_blog+'</div>';
 			$("#tabs-3").html(post);
             $("#search-info").show();
 			gadgets.window.adjustHeight();
