@@ -109,11 +109,8 @@
      right:270px;
      bottom:2px;
      width:47%;
-     padding: 7px 10px;
+     padding: 7px;
      display:inline;
-     -webkit-border-radius:25px;
-     -moz-border-radius: 25px;
-     border-radius:25px;
 	 box-shadow: inset 2px 2px 2px 0px #ddd;
 	 -webkit-box-shadow: inset 2px 2px 2px 0px #dddddd;
   -moz-box-shadow: inset 2px 2px 2px 0px #dddddd;
