@@ -313,9 +313,13 @@ else if(type=="document")
 {
 var totalPage=total_page_document;
 }
-else
+else if(type=="blog")
 {
 var totalPage=total_page_blog;
+}
+else
+{
+var totalPage=total_page_all;
 }
 
  var selectedPage=".div_page_"+type+"_"+page;
@@ -455,38 +459,41 @@ function search() {
 				if(row.type=="discussion"){
 				mainId=allId;
 
-			if(isQuestion)
-			{
-			if(isAnswered != 0){
+			    if(isQuestion)
+				{
+				if(isAnswered != 0){
 				typeImage ='<span class="jive-icon-med jive-icon-discussion-correct"></span>';
 
-			}
+				}
 				else
-			{
-			typeImage ='<span class="jive-icon-med jive-icon-discussion-question"></span>';
-			}	
-			}
+				{
+				typeImage ='<span class="jive-icon-med jive-icon-discussion-question"></span>';
+					
+				}
 
-		else
+			else
 			{
 			typeImage ='<span class="jive-icon-med jive-icon-discussion"></span>';
+			}
 		}
-			}else if(row.type=="document"){
+			else if(row.type=="document"){
 
-				typeImage ='<span class="jive-icon-med jive-icon-document"></span>';
+			typeImage ='<span class="jive-icon-med jive-icon-document"></span>';
 			mainId="DOC-"+allId;
-			}else if(row.type=="post"){
+			}
+			else if(row.type=="post")
+			{
 			var postDetailsId=row.resources.self.ref;
-		var blogSummaryId=row.blogSummary.resources.self.ref;
-		var blogId = (blogSummaryId.substring(blogSummaryId.lastIndexOf("/"))).substr(1);
+			var blogSummaryId=row.blogSummary.resources.self.ref;
+			var blogId = (blogSummaryId.substring(blogSummaryId.lastIndexOf("/"))).substr(1);
 			var postId = (postDetailsId.substring(postDetailsId.lastIndexOf("/"))).substr(1);
 
 			typeImage ='<span class="jive-icon-med jive-icon-blog"></span>';
 			mainId="post-"+postId+"/"+blogId;
-		}
+			}
 			
-		if((loop_check_all>=items_per_page)&& (loop_check_all%items_per_page==0))
-			{	{
+			if((loop_check_all>=items_per_page)&& (loop_check_all%items_per_page==0))
+			{
 
 				intial_all=intial_all+1;
 				display_all="display:none";
