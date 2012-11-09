@@ -111,9 +111,10 @@
      width:47%;
      padding: 7px;
      display:inline;
+	 padding-right:7px;
 	 box-shadow: inset 2px 2px 2px 0px #ddd;
 	 -webkit-box-shadow: inset 2px 2px 2px 0px #dddddd;
-  -moz-box-shadow: inset 2px 2px 2px 0px #dddddd;
+	-moz-box-shadow: inset 2px 2px 2px 0px #dddddd;
 	 
      /*overflow-y:scroll;
      overflow-X:hidden;*/
