@@ -87,14 +87,7 @@ expandDiscussion(curRowId);
     
  //function for tabs
  $(function() {
-         $( "#tabs" ).tabs();
-		 $( ".content").html({ select: function(event, ui) {
-                                          $(ui.panel).empty();
-                                      }
-                               });
-		
-
-        
+         $( "#tabs" ).tabs();       
  });
 
 //function for date format
