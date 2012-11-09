@@ -109,11 +109,12 @@
      right:270px;
      bottom:2px;
      width:47%;
-     padding:10px;
+     padding: 7px 10px;
      display:inline;
      -webkit-border-radius:25px;
      -moz-border-radius: 25px;
      border-radius:25px;
+	 
      /*overflow-y:scroll;
      overflow-X:hidden;*/
    overflow:auto;
