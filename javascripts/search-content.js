@@ -594,7 +594,7 @@ function search() {
 								}
 								var page="page_blog_"+intial_blog;
 							
-							post +='<div id="div_'+postId+'" class="firstdiv"> ';
+								post +='<div id="div_'+postId+'" class="firstdiv"> ';
 								post +='<div class="div_'+page+'" style="'+display_blog+'">';	
 							post +='<ul>';
 							post +='<span class="jive-icon-med jive-icon-blog"></span><li class="post" ><a href="'+url+'" target="_apps">'+subject+'</a></li>';
@@ -641,7 +641,7 @@ function search() {
 			document +='<div class="pagingControls">Page:'+paginate_document+'</div>';
 			console.log("document::"+document);
 			$("#tabs-2").html(document);
-			blog +='<div class="pagingControls">Page:'+paginate_blog+'</div>';
+			post +='<div class="pagingControls">Page:'+paginate_blog+'</div>';
 			$("#tabs-3").html(post);
             $("#search-info").show();
 			gadgets.window.adjustHeight();
