@@ -3,6 +3,12 @@
        line-height: 10px;
        padding: 0 0;
 }
+.search-results li a{
+        display: inline;
+       line-height: 10px;
+       padding: 0.5em 1em;
+}
+  
   
 .search-results ul {padding: 0 0;}
 
