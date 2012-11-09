@@ -313,7 +313,7 @@ else if(type=="document")
 {
 var totalPage=total_page_document;
 }
-else if(type=="blog")
+else(type=="blog")
 {
 var totalPage=total_page_blog;
 }
