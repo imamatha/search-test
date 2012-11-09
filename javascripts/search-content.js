@@ -597,7 +597,7 @@ discussion +='</div>';
 
 discussion +='<div class="root">';
                                 discussion +='<ul>';
-                    discussion +='<div">'+contentSummary+'</div>';
+                    discussion +='<div>'+contentSummary+'</div>';
                      discussion +='</ul>';
 discussion +='</div>';	
 discussion +='</div>';
