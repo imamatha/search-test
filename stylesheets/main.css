@@ -3,12 +3,14 @@
        line-height: 10px;
        padding: 0 0;
 }
-.search-results li a{
+.search-results li {
         display: inline;
        line-height: 10px;
-       padding: 0.5em 1em;
+     padding: 0.1em 0.5em;
 }
-  
+ .search-results  li a:hover{
+     text-decoration:underline;
+} 
   
 .search-results ul {padding: 0 0;}
 
