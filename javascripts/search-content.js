@@ -614,7 +614,7 @@ function search() {
 			
 			console.log("discussion::"+discussion);
 			//$("#tabs-1").html(all);
-			discussion +='<div class="pagingControls">Page: <ul>'+paginate_discussion+'<ul></div>';
+			discussion +='<div class="pagingControls">Page:'+paginate_discussion+'</div>';
 			
 			$("#tabs-1").html(discussion);
 			document +='<div class="pagingControls">Page: <ul>'+paginate_document+'<ul></div>';
