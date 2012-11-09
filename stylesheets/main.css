@@ -171,7 +171,8 @@
       color: black;
       -webkit-border-radius:25px;
        -moz-border-radius: 25px;
-       border-radius:25px;
+       border-radius:25px
+	    overflow:auto;
 }
 
 /*Date format,anchor styling in content border*/
