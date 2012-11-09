@@ -448,6 +448,66 @@ function search() {
                 dateM=myDate[1];
 				var finalMonth=monthConvert(dateM);
 				var newDate=finalMonth+" "+myDate[2]+","+myDate[0]; 
+				var allId = (row.resources.self.ref.substring(row.resources.self.ref.lastIndexOf("/"))).substr(1);
+
+				if(row.type=="discussion"){
+				mainId=allId;
+
+			if(isQuestion)
+			{
+			if(isAnswered != 0){
+				typeImage ='<span class="jive-icon-med jive-icon-discussion-correct"></span>';
+
+			}
+				else
+			{
+			typeImage ='<span class="jive-icon-med jive-icon-discussion-question"></span>';
+			}	
+			}
+
+		else
+			{
+			typeImage ='<span class="jive-icon-med jive-icon-discussion"></span>';
+		}
+			}else if(row.type=="document"){
+
+				typeImage ='<span class="jive-icon-med jive-icon-document"></span>';
+			mainId="DOC-"+allId;
+			}else if(row.type=="post"){
+			var postDetailsId=row.resources.self.ref;
+		var blogSummaryId=row.blogSummary.resources.self.ref;
+		var blogId = (blogSummaryId.substring(blogSummaryId.lastIndexOf("/"))).substr(1);
+			var postId = (postDetailsId.substring(postDetailsId.lastIndexOf("/"))).substr(1);
+
+			typeImage ='<span class="jive-icon-med jive-icon-blog"></span>';
+			mainId="post-"+postId+"/"+blogId;
+		}
+				
+				
+					all +='<div id="div_'+allId+'" class="firstdiv" >';
+					all +='<ul>';	
+					all +=typeImage+'<li><a href="'+url+'" target="_apps">'+subject+'</a></li>';	
+                    all +='</ul>';
+                    all +='<ul>';
+					all +='<span class="jive-icon-med image-button " id="'+mainId+'"></span>';
+                     all +='</ul>';
+
+					all +='<div class="root1">';
+                     all +='<ul>';
+                     all +='<li>Created by <a class="nopad" href=https://apps-onprem.jivesoftware.com/people/'+username+'>'+author+'</a></li>';
+					all +='&nbsp;&nbsp<li>Date:'+newDate+'</li>';
+                     all +='&nbsp;&nbsp<li>Replies:'+replyCount+'</li>';
+                     all +='</ul>';
+					all +='</div>';
+
+					all +='<div class="root">';
+                    all +='<ul>';
+                    all +='<div class="align">'+contentSummary+'</div>';
+                    all +='</ul>';
+					all +='</div>';	
+					all +='</div>';
+
+
 					
                         if(row.type=="discussion"){
 						
@@ -635,15 +695,15 @@ function search() {
 			//all +="<br>"+post;
 			
 			console.log("discussion::"+discussion);
-			//$("#tabs-1").html(all);
+			$("#tabs-1").html(all);
 			discussion +='<br><div class="pagingControls">Page:'+paginate_discussion+'</div>';
 			
-			$("#tabs-1").html(discussion);
+			$("#tabs-2").html(discussion);
 			document +='<br><div class="pagingControls">Page:'+paginate_document+'</div>';
 			console.log("document::"+document);
-			$("#tabs-2").html(document);
+			$("#tabs-3").html(document);
 			post +='<br><div class="pagingControls">Page:'+paginate_blog+'</div>';
-			$("#tabs-3").html(post);
+			$("#tabs-4").html(post);
             $("#search-info").show();
 			gadgets.window.adjustHeight();
         }
