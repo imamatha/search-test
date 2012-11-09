@@ -313,6 +313,10 @@ else if(type=="document")
 {
 var totalPage=total_page_document;
 }
+else if(type=="blog")
+{
+var totalPage=total_page_blog;
+}
 
  var selectedPage=".div_page_"+type+"_"+page;
  console.log("Inside show page:::"+selectedPage +"Total Page::"+totalPage);
