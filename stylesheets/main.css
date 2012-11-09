@@ -134,9 +134,7 @@
 	 
      /*overflow-y:scroll;
      overflow-X:hidden;*/
-   overflow:auto;
-   max-height:300px;
-     
+   overflow:auto;    
 }
 
 .content ul li {
