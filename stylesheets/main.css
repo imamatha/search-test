@@ -115,6 +115,8 @@
      -moz-border-radius: 25px;
      border-radius:25px;
 	 box-shadow: inset 2px 2px 2px 0px #ddd;
+	 -webkit-box-shadow: inset 2px 2px 2px 0px #dddddd;
+  -moz-box-shadow: inset 2px 2px 2px 0px #dddddd;
 	 
      /*overflow-y:scroll;
      overflow-X:hidden;*/
