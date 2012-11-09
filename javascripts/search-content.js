@@ -585,7 +585,7 @@ function search() {
 									
 									intial_blog=intial_blog+1;
 									display_blog="display:none";
-									paginate_blog += '<li><a href="#" onclick=showPage("'+ intial_blog + '","post"); return false;>' + intial_blog + '</a></li>';
+									paginate_blog += '<li><a href="#" onclick=showPage("'+ intial_blog + '","post"); return false;>' + blog+ '</a></li>';
 								}
 								else
 								{
