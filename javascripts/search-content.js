@@ -622,7 +622,7 @@ function search() {
 							loop_check_blog=loop_check_blog+1							
 							             
 					}
-					
+				total_page_blog = intial_blog;	
                                   
             });
           
