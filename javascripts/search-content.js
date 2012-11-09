@@ -87,7 +87,8 @@ expandDiscussion(curRowId);
     
  //function for tabs
  $(function() {
-         $( "#tabs" ).tabs({ select: function(event, ui) {
+         $( "#tabs" ).tabs();
+		 $( ".content").tabs({ select: function(event, ui) {
                                           $(ui.panel).empty();
                                       }
                                });
