@@ -133,7 +133,6 @@
      /*overflow-y:scroll;
      overflow-X:hidden;*/
    overflow:auto;    
-   clear:both;
 }
 
 .content ul li {
